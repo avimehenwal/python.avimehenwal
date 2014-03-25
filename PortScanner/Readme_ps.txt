@@ -1,6 +1,6 @@
-=============================
-+		PORT SCANNER		+
-=============================
+==================================
++	   PORT SCANNER 	 +
+==================================
 
 FEATURES :
 1) Cross platform
@@ -21,7 +21,9 @@ DEPENDENCIES :
 > Any network communication goes through a socket.
 > Based on inbuilt module
 
+
 Socket functions
+=================================
 
 sock = socket.socket (socket_family, socket_type)
 	Syntax for creating a socket
