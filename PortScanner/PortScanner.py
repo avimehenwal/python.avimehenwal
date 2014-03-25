@@ -1,9 +1,17 @@
 #!/usr/bin/env python
 
+# AUTHOR  :   AVI MEHENWAL
+# DATE    :   25-March-2014
+# PURPOSE   :   POrt scanning utility
+
+# TCP connection check
+
 
 from datetime import datetime
 import subprocess
+import threading
 import socket
+import Queue
 import sys
 import os
 
@@ -33,43 +41,52 @@ print "-" * 60
 t1 = datetime.now()
 print t1
 
-# Using the range function to specify ports (here it will scans all ports between 1 and 1024)
+# Using the range function to specify ports
 
-# We also put in some error handling for catching errors
-
-try:
-    for port in range(1,100):  
+def port_scan(port):
+    try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        # returns the socket status code
         result = sock.connect_ex((remoteServerIP, port))
         
         # port_status = sock.connect((remoteServerIP, port))
         # tries to actually connect to server running on port
-        
+                
         if result == 0:
-            print "Port {}: \t Open".format(port)
+            return "Port {}: \t Open".format(port)
         elif result == 10061 :
             print "Port {}: \t Connection Refused by server".format(port)
+            
         elif result == 10063 :
-            print "Port {}: \t Name too long".format(port)
+            return "Port {}: \t Name too long".format(port)
         elif result == 10013 :
-            print "Port {}: \t Permission Denied".format(port)
+            return "Port {}: \t Permission Denied".format(port)
+
         else :
-            print "Port {}: \t Statu code unregistered [{}]".format(port,result)
+            return "Port {}: \t Statu code unregistered [{}]".format(port,result)
             
         sock.close()
 
-except KeyboardInterrupt:
-    print "You pressed Ctrl+C"
-    sys.exit()
+    except KeyboardInterrupt:
+        print "You pressed Ctrl+C"
+        # sys.exit()
+        return -1
 
-except socket.gaierror:
-    print 'Hostname could not be resolved. Exiting'
-    sys.exit()
+    except socket.gaierror:
+        print 'Hostname could not be resolved. Exiting'
+        return -1
 
-except socket.error as e:
-    print "Couldn't connect to server\n",e
-    sys.exit()
+    except socket.error as e:
+        print "Couldn't connect to server\n",e
+        return -1
 
+
+for port in range(27000,27020):
+    t = threading.Thread(target=port_scan(port))
+##    print t.getName()
+
+
+    
 # Checking the time again
 t2 = datetime.now()
 print t2
@@ -79,3 +96,5 @@ total =  t2 - t1
 
 # Printing the information to screen
 print 'Scanning Completed in: ', total
+
+
