@@ -98,3 +98,9 @@ total =  t2 - t1
 print 'Scanning Completed in: ', total
 
 
+
+
+
+
+# PS
+# http://www.artfulcode.net/articles/multi-threading-python/
