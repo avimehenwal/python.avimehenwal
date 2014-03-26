@@ -2,16 +2,21 @@
 
 # AUTHOR  :   AVI MEHENWAL
 # DATE    :   25-March-2014
-# PURPOSE   :   POrt scanning utility
+# PURPOSE :   POrt scanning utility
 
-# TCP connection check
+""" ENHANCEMENTS:
+- Parallel Threads
+- Queue Implementation
+- Gevent based greenlets
+- SocketStatus to be kept seperate in dict format
+
+"""
 
 
 from datetime import datetime
 import subprocess
 import threading
 import socket
-import Queue
 import sys
 import os
 
@@ -53,17 +58,17 @@ def port_scan(port):
         # tries to actually connect to server running on port
                 
         if result == 0:
-            return "Port {}: \t Open".format(port)
+            print "Port {}: \t Open".format(port)
         elif result == 10061 :
             print "Port {}: \t Connection Refused by server".format(port)
             
         elif result == 10063 :
-            return "Port {}: \t Name too long".format(port)
+            print "Port {}: \t Name too long".format(port)
         elif result == 10013 :
-            return "Port {}: \t Permission Denied".format(port)
+            print "Port {}: \t Permission Denied".format(port)
 
         else :
-            return "Port {}: \t Statu code unregistered [{}]".format(port,result)
+            print "Port {}: \t Statu code unregistered [{}]".format(port,result)
             
         sock.close()
 
