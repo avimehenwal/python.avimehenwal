@@ -8,9 +8,7 @@
 - Parallel Threads
 - Queue Implementation
 - Gevent based greenlets
-- SocketStatus to be kept seperate in dict format
-
-"""
+- SocketStatus to be kept seperate in dict format"""
 
 
 from datetime import datetime
@@ -46,22 +44,20 @@ print "-" * 60
 t1 = datetime.now()
 print t1
 
-# Using the range function to specify ports
+class Port_scan_Threaded(threading.Thread):
+    '''This subclass inherits Threading.Thread class and overrides some functions'''
 
-def port_scan(port):
-    try:
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # returns the socket status code
-        result = sock.connect_ex((remoteServerIP, port))
+    def __init__(self, port):
+        threading.Thread.__init__(self)
+        self.port = port
         
-        # port_status = sock.connect((remoteServerIP, port))
-        # tries to actually connect to server running on port
-                
+    def port_scan_result(self,port,result):
         if result == 0:
             print "Port {}: \t Open".format(port)
+        elif result == -1 :
+            print "Port {}: \t Threw an EXCEPTION".format(port)
         elif result == 10061 :
-            print "Port {}: \t Connection Refused by server".format(port)
-            
+            print "Port {}: \t Connection Refused by server".format(port)    
         elif result == 10063 :
             print "Port {}: \t Name too long".format(port)
         elif result == 10013 :
@@ -69,40 +65,60 @@ def port_scan(port):
 
         else :
             print "Port {}: \t Statu code unregistered [{}]".format(port,result)
+        return 0
+
+
+    def run(self):
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            # returns the socket execution status code
+            result = sock.connect_ex((remoteServerIP, self.port))
+            sock.close()
             
-        sock.close()
+            # port_status = sock.connect((remoteServerIP, port))
+            # tries to actually connect to server running on port
 
-    except KeyboardInterrupt:
-        print "You pressed Ctrl+C"
-        # sys.exit()
-        return -1
+        except KeyboardInterrupt:
+            print "You pressed Ctrl+C"
+            # sys.exit()
+            return -1
 
-    except socket.gaierror:
-        print 'Hostname could not be resolved. Exiting'
-        return -1
+        except socket.gaierror:
+            print 'Hostname could not be resolved. Exiting'
+            return -1
 
-    except socket.error as e:
-        print "Couldn't connect to server\n",e
-        return -1
+        except socket.error as e:
+            print "Couldn't connect to server\n",e
+            return -1
 
+        self.port_scan_result(self.port,result)
+        return 0
 
-for port in range(27000,27020):
-    t = threading.Thread(target=port_scan(port))
-##    print t.getName()
+if __name__=='__main__':
+    t = []
+    for port in range(27000,27200):
+        t.append(Port_scan_Threaded(port))
+    ##    print t.getName()
 
+    for i in t:
+        i.start()
 
+    print "-"*60
     
-# Checking the time again
-t2 = datetime.now()
-print t2
+    for i in t:
+        i.join()
 
-# Calculates the difference of time, to see how long it took to run the script
-total =  t2 - t1
+    print "-"*60
+    
+    # Checking the time again
+    t2 = datetime.now()
+    print t2
 
-# Printing the information to screen
-print 'Scanning Completed in: ', total
+    # Calculates the difference of time, to see how long it took to run the script
+    total =  t2 - t1
 
-
+    # Printing the information to screen
+    print 'Scanning Completed in: ', total
 
 
 
