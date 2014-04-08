@@ -6,6 +6,7 @@
 
 """ ENHANCEMENTS:
 - Parallel Threads
+- List of open ports ?
 - Queue Implementation
 - Gevent based greenlets
 - SocketStatus to be kept seperate in dict format"""
@@ -47,21 +48,35 @@ print t1
 class Port_scan_Threaded(threading.Thread):
     '''This subclass inherits Threading.Thread class and overrides some functions'''
 
-    def __init__(self, port):
+    def __init__(self, port=0):
         threading.Thread.__init__(self)
         self.port = port
-        
+        self.open_port_list = []
+        self.permission_denied_list = []
+
+    def get_openPortList(self):
+        return self.open_port_list
+
+    def get_permission_denied_list(self):
+        return self.permission_denied_list
+    
     def port_scan_result(self,port,result):
         if result == 0:
-            print "Port {}: \t Open".format(port)
+            self.open_port_list.append(port)
+            #print "Port {}: \t Open".format(port)
         elif result == -1 :
-            print "Port {}: \t Threw an EXCEPTION".format(port)
+            pass
+            #print "Port {}: \t Threw an EXCEPTION".format(port)
         elif result == 10061 :
-            print "Port {}: \t Connection Refused by server".format(port)    
+            pass
+            #print "Port {}: \t Connection Refused by server".format(port)    
         elif result == 10063 :
-            print "Port {}: \t Name too long".format(port)
+            pass
+            #print "Port {}: \t Name too long".format(port)
         elif result == 10013 :
-            print "Port {}: \t Permission Denied".format(port)
+            self.permission_denied_list.append(port)
+            return self.permission_denied_list
+            #print "Port {}: \t Permission Denied".format(port)
 
         else :
             print "Port {}: \t Statu code unregistered [{}]".format(port,result)
@@ -91,12 +106,14 @@ class Port_scan_Threaded(threading.Thread):
             print "Couldn't connect to server\n",e
             return -1
 
-        self.port_scan_result(self.port,result)
+        r = self.port_scan_result(self.port,result)
+        print r
+        
         return 0
 
 if __name__=='__main__':
     t = []
-    for port in range(27000,27200):
+    for port in range(0,700):
         t.append(Port_scan_Threaded(port))
     ##    print t.getName()
 
@@ -109,7 +126,9 @@ if __name__=='__main__':
         i.join()
 
     print "-"*60
-    
+    p = Port_scan_Threaded()
+    print p.get_openPortList()
+    print p.get_permission_denied_list()
     # Checking the time again
     t2 = datetime.now()
     print t2
