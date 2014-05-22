@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+# AUTHOR	:	AVI MEHENWAL
+# PURPOSE	:	Simple Internet Downloader
+# DATE		:	30-April-2014
+
+import urllib
+
+
+
+f = open("path_to_your_file_to_save", 'w')
+f.write(urllib.urlopen(url).read())
+f.close()
+Where path_to_your_file_to_save equals [path_where_save] + [filename.ext]
+
+
+http://fullmp3song.com/uploads/files/ds2/734/Aaj%20Se%20Pahele%20-%20Chitchor(FullMP3Song.com).mp3
