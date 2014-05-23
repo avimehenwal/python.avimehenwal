@@ -173,3 +173,15 @@ if __name__ == '__main__':
         unittest.TextTestRunner(verbosity=1).run(suite)
 
 # END
+
+"""
+Never import the module-under-test at test module scope
+Guideline: Minimize module-scope dependencies
+Rule: Make each test case method test Just One Thing
+Rule: Name TCMs to indicate what they test
+Guideline: Share setup via helper methods, not via attributes of self
+Guideline: Make fixtures as simple as possible
+Guideline: Use hooks and registries judiciously
+Guideline: Use mock objects to clarify dependent contracts
+Rule: Don’t share text fixtures between test modules
+"""
