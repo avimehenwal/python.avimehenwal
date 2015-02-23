@@ -87,3 +87,20 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+#######################################################################################
+
+class Oracle(object):
+  pass
+
+
+class SQLite(object):
+  pass
+
+dbkind = dict(sqlite=SQLite, oracle=Oracle)
+
+
+def Database(url):
+  db_type, rest = string.split(self.url, "://", 1)
+  return dbkind[db_type](rest)
