@@ -1,17 +1,17 @@
-Design patterns :
+design patterns :
 ---------------------------
 
 
-### GIT Repositories
+### git repositories
 
-* [Design-Patterns-in-Python](https://github.com/gennad/Design-Patterns-in-Python)
+* [design-patterns-in-python](https://github.com/gennad/design-patterns-in-python)
 * [design_patterns](http://sourcemaking.com/design_patterns)
 
 
-### Web Resources
+### web resources
 
 
-### Good Books
+### good books
 
 
 

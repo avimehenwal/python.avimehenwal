@@ -183,5 +183,5 @@ Guideline: Share setup via helper methods, not via attributes of self
 Guideline: Make fixtures as simple as possible
 Guideline: Use hooks and registries judiciously
 Guideline: Use mock objects to clarify dependent contracts
-Rule: Don’t share text fixtures between test modules
+Rule: Donï¿½t share text fixtures between test modules
 """
