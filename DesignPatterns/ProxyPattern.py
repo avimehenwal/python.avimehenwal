@@ -23,7 +23,9 @@ At the class or module level: In this case, we do not want a different copy per 
 4. Example : This means that you cannot make any transactions without physically presenting the card and knowing the PIN
 An Object-Relational Mapping (ORM) API is also an example of how to use a remote proxy
 
-5.
+5. A proxy, in its most general form, is a class functioning as an interface to something else. The proxy could interface to anything: a network connection, a large object in memory, a file, or some other resource that is expensive or impossible to duplicate.
+
+6.
 
 """
 
