@@ -16,6 +16,7 @@ Note that Python's GIL is only really an issue for CPython, the reference implem
 
 Python supports MULTIPLE INHERITANCE
 
+```python
 class Base1:
     pass
 
@@ -33,6 +34,7 @@ class Derived1(Base):
 
 class Derived2(Derived1):
     pass
+```
 
 Python Operator Overloading
 Python operators work for built-in classes. But same operator behaves differently with different types. For example, the + operator will, perform arithmetic addition on two numbers, merge two lists and concatenate two strings. This feature in Python, that allows same operator to have different meaning according to the context is called operator overloading.
