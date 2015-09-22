@@ -3,6 +3,7 @@ from selenium.webdriver import firefox
 
 @pytest.fixture
 def webdriver(request):
+    """ request is a special fixture, can pass cmdline arguments to it """
     driver = Firefox()
     request.addfinalizer(driver.quit)
     return driver
