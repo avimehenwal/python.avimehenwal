@@ -16,7 +16,7 @@ Unit Test Case -> from the point of view of developer, logic, flow, configuratio
 
 
 class HomePageTest(TestCase):
-    
+   
     def test_root_url_resolves_to_home_page_view(self):
         found = resolve('/')
         print(found)
@@ -26,5 +26,5 @@ class HomePageTest(TestCase):
         request = HttpRequest()
         response = home_page(request)
         expected_html = render_to_string('home.html')
-        self.asserEqual(response.content.decode(), expected_html)
+        self.assertEqual(response.content.decode(), expected_html)
 
