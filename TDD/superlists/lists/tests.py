@@ -2,11 +2,12 @@ from django.core.urlresolvers import resolve
 from django.test import TestCase
 from lists.views import home_page
 from django.http import HttpRequest
+from django.template.loader import render_to_string
 
-        
-# Functional TC  -> from the point of view of user
-# Unit Test Case -> from the point of view of developer
-
+"""        
+Functional TC  -> from the point of view of user
+Unit Test Case -> from the point of view of developer, logic, flow, configurations and not constrains
+"""
 
 #class SmokeTest(TestCase):
 #
@@ -24,7 +25,6 @@ class HomePageTest(TestCase):
     def test_homepage_returns_correct_html(self):
         request = HttpRequest()
         response = home_page(request)
-        self.assertTrue(response.content.startswith(b'<html>'))
-        self.assertIn(b'<title>To-Do lists</title>', response.content)
-        self.assertTrue(response.content.endswith(b'</html>'))
+        expected_html = render_to_string('home.html')
+        self.asserEqual(response.content.decode(), expected_html)
 
