@@ -30,7 +30,7 @@ A regular expression specifies a set of strings that matches it.
 | []()] 	| Matches ']', '(', and ')'. ']' is taken literally only as the first character in a set. |
 | [()\]] 	| Matches ']', '(', and ')'. |
 | (...) 	| Matches the RE inside the parenthesis and assigns a new group. |
-| (?P<name>...) 	| The RE matched is accessible by the group indicated by name. |
+| (?P\<name\>...) 	| The RE matched is accessible by the group indicated by name. |
 | (?...) 	| Extension notation which changes a RE's behavior. These do not assign a new group. |
 | (?aiLmsux) 	| Sets the corresponding flag to each letter. Does not work within Sublime Text. |
 | (?:...) 	| A non-capturing version of parenthesis. The matched substring cannot be retrieved later. |
