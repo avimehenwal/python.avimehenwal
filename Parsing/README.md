@@ -13,7 +13,7 @@ A regular expression specifies a set of strings that matches it.
 | +? 	| Matches 1 or more repetitions of the preceding RE. |
 | ? 	| Greedily matches 0 or 1 repetitions of the preceding RE. |
 | ?? 	| Matches 0 or 1 repetitions of the preceding RE. |
-| A|B 	| Matches A, if A is unmatched then matches B, where A and B are arbitrary REs. |
+| A\|B 	| Matches A, if A is unmatched then matches B, where A and B are arbitrary REs. |
 | {m} 	| Matches exactly m many repetitions of the previous RE. |
 | {m,n} 	| Greedily matches from m many to n many repetitions of the previous RE. |
 | {m,n}? 	| Matches m many to n many repetitions of the previous RE. |
