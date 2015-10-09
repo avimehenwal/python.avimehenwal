@@ -8,15 +8,15 @@ A regular expression specifies a set of strings that matches it.
 | ^ 	| Matches the start of the string. |
 | $ 	| Matches the end of the string. |
 | * 	| Greedily matches 0 or more repetitions of the preceding RE. |
-| *? 	| Matches 0 or more repetitions of the preceding RE. |
+| *? 	| Non-Greedy version of * . Matches 0 or more repetitions of the preceding RE. |
 | + 	| Greedily matches 1 or more repetitions of the preceding RE. |
-| +? 	| Matches 1 or more repetitions of the preceding RE. |
-| ? 	| Greedily matches 0 or 1 repetitions of the preceding RE. |
-| ?? 	| Matches 0 or 1 repetitions of the preceding RE. |
+| +? 	| Non-Greedy version of + . Matches 1 or more repetitions of the preceding RE. |
+| ? 	| Optional match. Greedily matches 0 or 1 repetitions of the preceding RE. |
+| ?? 	| Non-Greedy version of ? . Matches 0 or 1 repetitions of the preceding RE. |
 | A\|B 	| Matches A, if A is unmatched then matches B, where A and B are arbitrary REs. |
 | {m} 	| Matches exactly m many repetitions of the previous RE. |
 | {m,n} 	| Greedily matches from m many to n many repetitions of the previous RE. |
-| {m,n}? 	| Matches m many to n many repetitions of the previous RE. |
+| {m,n}? 	| Non-Greedy varient. Matches m many to n many repetitions of the previous RE. |
 | [...] 	| Indicates a set of characters to match. |
 | [amk] 	| Matches 'a', 'm', or 'k'. |
 | [a-z] 	| Matches 'a' through 'z'. |
@@ -27,20 +27,20 @@ A regular expression specifies a set of strings that matches it.
 | [(+*)] 	| Matches '(', '+', '*', or ')'. [] matches special characters literally. |
 | [\w] 	| Matches the character class for '\w'. See character classes. |
 | [^5] 	| Matches anything other than '5'. '^' forms the complementary set only as the first character in a set. |
-| []()] 	| Matches ']', '(', and ')'. ']' is taken literally only as the first character in a set. |
+| \[\]\(\)] 	| Matches ']', '(', and ')'. ']' is taken literally only as the first character in a set. |
 | [()\]] 	| Matches ']', '(', and ')'. |
-| (...) 	| Matches the RE inside the parenthesis and assigns a new group. |
-| (?P\<name\>...) 	| The RE matched is accessible by the group indicated by name. |
+| (...) 	| Grouping. Matches the RE inside the parenthesis and assigns a new group. |
+| (?P\<name\>...) 	| Python Named Group. The RE matched is accessible by the group indicated by name. |
 | (?...) 	| Extension notation which changes a RE's behavior. These do not assign a new group. |
 | (?aiLmsux) 	| Sets the corresponding flag to each letter. Does not work within Sublime Text. |
-| (?:...) 	| A non-capturing version of parenthesis. The matched substring cannot be retrieved later. |
+| (?:...) 	| A non-capturing group containing subexpression. The matched substring cannot be retrieved later. |
 | (?P=name) 	| Matches the substring matched by the group named name. |
 | (?#...) 	| A comment, the contents are ignored. |
 | (?=...) 	| Lookahead assertion, the preceding RE only matches if this matches. |
 | (?!...) 	| Negative lookahead assestion, the preceding RE only matches if this doesn't match. |
 | (?<=...) 	| Positive lookbehind assertion, the following RE will only match if preceeded with this fixed length RE. |
 | (?<!...) 	| Negative lookbehind assertion, the following RE will only match if not preceeded with this fixed length RE. |
-| (?(id)true|false) 	| If group id exists then uses the true RE, else use the false RE. |
+| (?(id)truei\|false) 	| If group id exists then uses the true RE, else use the false RE. |
 
 
 | Meta Character classes | Description |
@@ -60,6 +60,6 @@ A regular expression specifies a set of strings that matches it.
 | \f 	| Matches the ASCII Formfeed (). |
 | \n 	| Matches the ASCII Linefeed. |
 | \r 	| Matches the ASCII Carriage Return ( |
-| ). 	| |
 | \t 	| Matches the ASCII Horizontal Tab. |
 | \v 	| Matches the ASCII Vertical Tab (). |
+| ). 	| |
