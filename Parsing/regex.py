@@ -40,3 +40,12 @@ print(split)
 line = 'asdf fjdk; afed, fjek,asdf,      foo'
 print(re.split(r'[;,\s]\s*', line))
 print(re.split(r'(;|,|\s)\s*', line))
+
+# Findall non-overlapping occourence of a pattern
+pattern = re.compile(r'a*')
+pattern.findall("hello world")
+
+# Backreference with substitution \g<number>
+text = "imagine a new *world*, a magic *world*"
+pattern = re.compile(r'\*(.*?)\*')
+print(pattern.sub(r"<b>\g<1>5<\\b>", text))
