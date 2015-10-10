@@ -63,3 +63,26 @@ A regular expression specifies a set of strings that matches it.
 | \t 	| Matches the ASCII Horizontal Tab. |
 | \v 	| Matches the ASCII Vertical Tab (). |
 | ). 	| |
+
+
+### Python re module regex
+
+| Python Objects  | Description |
+|-----------------|---------------------------------------------------|
+| match           | from the beginning of the string |
+| search          | match pattern at any location in string |
+| findall         | List of all non-overlapping occourence of pattern |
+| finditer        | iterator implementation of findall |
+| sub             | replace matched patterns |
+| split           | split based on regex |
+
+| Python MatchObject | Description |
+|--------------------|-------------|
+| group   | subgroups of matches |
+| groups  | tuple of matches |
+| groupdict       | used for named groups |
+| start   | |
+| end     | |
+| span    | |
+| expand  | |
+
