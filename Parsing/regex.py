@@ -26,6 +26,11 @@ Python Named Groups
 'avi'
 
 Greedy And Non-Greedy Pattern matching
+>>> re.search(r".+", string)
+<_sre.SRE_Match object; span=(0, 32), match='English "HEllo" , Spanish "Hola"'>
+>>> re.search(r".+?", string)
+<_sre.SRE_Match object; span=(0, 1), match='E'>
+>>> 
 """
 
 string = "This is a ((test)) of the ((emergency station))."
