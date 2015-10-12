@@ -30,7 +30,14 @@ Greedy And Non-Greedy Pattern matching
 <_sre.SRE_Match object; span=(0, 32), match='English "HEllo" , Spanish "Hola"'>
 >>> re.search(r".+?", string)
 <_sre.SRE_Match object; span=(0, 1), match='E'>
->>> 
+
+Overlapping Groups
+>>> re.findall(r'(a|b)+', 'abaca')
+['a', 'a']
+>>> re.findall(r'(?:a|b)+', 'abaca')
+['aba', 'a']
+>>> re.findall(r'(a|b)', 'abaca')
+['a', 'b', 'a', 'a']
 """
 
 string = "This is a ((test)) of the ((emergency station))."
@@ -49,3 +56,14 @@ pattern.findall("hello world")
 text = "imagine a new *world*, a magic *world*"
 pattern = re.compile(r'\*(.*?)\*')
 print(pattern.sub(r"<b>\g<1>5<\\b>", text))
+
+# Backreference
+pattern = re.compile(r"(\d+)-(\w+)")
+print(pattern.sub(r"\2-\1", "1-a\n20-avi\n34-mehenwal"))
+
+# Look Arounds (Non-Consuming)
+pattern = re.compile(r'\w+(?=,|\.)')
+print(pattern.findall("They were three: Felix, Victor, and Carlos."))
+
+pattern = re.compile(r'\w+,')
+print(pattern.findall("They were three: Felix, Victor, and Carlos."))
