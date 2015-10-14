@@ -1,4 +1,4 @@
-design patterns :
+Design Patterns :
 ---------------------------
 
 
@@ -11,9 +11,11 @@ design patterns :
 
 
 ### web resources
+(http://python-3-patterns-idioms-test.readthedocs.org/en/latest/Part3.html)
 
 
 ### good books
+The Gang Of Four a.k.a. The Bible Of Design Pattern
 
 
 
