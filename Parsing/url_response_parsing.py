@@ -10,9 +10,9 @@ res = urlopen(url)
 r = res.read().decode('utf-8')
 
 # fetch reflektion.js
-refjs = re.search(r"(.*reflektion\.js.*)", r)
+refjs = re.search(r'\("(//[\w|.|/]+reflektion.js[\?|\w|=|\d]+)', r)
 if refjs:
-    print(refjs.group(0))
+    print(refjs.groups())
 else:
     print("you failed")    
 
