@@ -41,3 +41,18 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+-----------------------------------------------------------------------------------------
+
+class AbstractBase(object):
+    """ Organising methods, doesnt know what they do """
+    def orgMethod(self):
+        # Calling the methods in a structured/logical way
+        self.doThis()
+        self.doThat()
+
+class Concrete(AbstractBase):
+    """ Only implements. Execution flow comes from AbstractBase """
+    # Hook Methods
+    def doThis(self): ...
+    def doThat(self): ...
