@@ -49,6 +49,11 @@ Major Difference between Python 2 and Python 3:
 3. python 3 supports Unicode
 4. raw_input() is replaced by input() method
 
+### Python Classes and Functions
+- New Classes and old classes. Diffreence ?
+- Though classmethod and staticmethod are quite similar, there's a slight difference in usage for both entities: classmethod must have a reference to a class object as the first parameter, whereas staticmethod can have no parameters at all.
+- Classmethods leads to Factory Design pattern in python
+
 ### Python @staticmethod
 Static methods are a special case of methods. Sometimes, you'll write code that belongs to a class, but that doesn't use the object itself at all. For example:
 
@@ -130,7 +135,7 @@ class Pizza(object):
         return self.compute_volume(self.height, self.radius)
 ```
 
-#### Abstract methods
+### Abstract methods
 
 An abstract method is a method defined in a base class, but that may not provide any implementation. In Java, it would describe the methods of an interface.
 So the simplest way to write an abstract method in Python is:
