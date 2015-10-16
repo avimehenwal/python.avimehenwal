@@ -78,8 +78,9 @@ True
 It eases the readability of the code: seeing @staticmethod, we know that the method does not depend on the state of object itself;
 It allows us to override the mix_ingredients method in a subclass. If we used a function mix_ingredients defined at the top-level of our module, a class inheriting from Pizza wouldn't be able to change the way we mix ingredients for our pizza without overriding cook itself.
 
+### Python @classmethods
 Having said that, what are class methods? Class methods are methods that are not bound to an object, but to… a class!
-
+```python
 >>> class Pizza(object):
 ...     radius = 42
 ...     @classmethod
@@ -95,13 +96,9 @@ Having said that, what are class methods? Class methods are methods that are not
 True
 >>> Pizza.get_radius()
 42
-
+```
 Whatever the way you use to access this method, it will be always bound to the class it is attached too, and its first argument will be the class itself (remember that classes are objects too).
-
-### Python @classmethods
-
 When to use this kind of methods? Well class methods are mostly useful for two types of methods:
-
 Factory methods, that are used to create an instance for a class using for example some sort of pre-processing. If we use a @staticmethod instead, we would have to hardcode the Pizza class name in our function, making any class inheriting from Pizza unable to use our factory for its own use.
 
 ```python
