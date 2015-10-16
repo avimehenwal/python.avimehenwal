@@ -33,6 +33,14 @@ class A:
     >>> Pizza.get_a(Pizza)
     get_a
     >>> 
+
+    >>> m = Pizza(42).get_size
+    >>> m.__self__
+    <__main__.Pizza object at 0x7f3138827910>
+    >>> # You could guess, look at this:
+    ...
+    >>> m == m.__self__.get_size
+    True
     """
 
     def __init__(self):
