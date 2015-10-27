@@ -1,5 +1,8 @@
+#!/usr/bin/env python
+
 import pytest
 from selenium.webdriver import firefox
+
 
 @pytest.fixture
 def webdriver(request):
