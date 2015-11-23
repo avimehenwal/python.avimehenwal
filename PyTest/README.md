@@ -18,4 +18,28 @@
 6. Autouse=True fixtures 
 7. Parameterising Fixtures
 
+#### BENEFITS
+1. Dropping pdb on failures
+2. Auto test-discovery
+3. Supports unittest
+4. Profiling test execution duration
+5. JUnitXML / resultlog format files
+6. Plugins
+7. Integration with setuptools
+8. Pretty failure report
+9. TestCase Labelling
 
+
+##### PARAMETRIZATION IMPLEMENTATIONS
+1. Direct Parametrization - setup fixture
+2. Indirect Parametrization
+    1. Per class configuration
+    2. Multiple Fixtures
+    3. Optional Implementations
+
+##### SUT
+1. Reflektion webservices
+    1. Are services available ?
+    2. Are they returning valid (ignore genuin) output ?
+    3. Are they getting displayed on customers website ?
+    4. Are they looking nicely aligned ?
