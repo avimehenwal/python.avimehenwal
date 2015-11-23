@@ -12,11 +12,13 @@
 ## Fixtures
 1. At different levels
 2. Scope: function, session, module
-3. Interdependent/Chain in fixtures
-4. Skip/Fails in fixtures
-5. Marks signature passing
-6. Autouse=True fixtures 
-7. Parameterising Fixtures
+3. Chaining Fixtures
+4. Interdependent Fixtures
+5. Skip/Fails in fixtures
+6. Marks signature passing
+7. Autouse=True fixtures 
+8. Parameterising Fixtures
+
 
 #### BENEFITS
 1. Dropping pdb on failures
