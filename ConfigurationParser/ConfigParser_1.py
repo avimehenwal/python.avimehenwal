@@ -1,3 +1,17 @@
+"""
+DEFAULT section which provides default values for all other sections.
+Keys in sections are case-insensitive and stored in lowercase.
+
+section names are case sensitive but keys are not
+
+Configparser section.value are internally stored as strings.
+This means that if you need other datatypes, you should convert on your own
+
+Fallback Values
+Interpolation Of Values
+
+"""
+
 import ConfigParser
 
 config = ConfigParser.RawConfigParser()
@@ -58,3 +72,4 @@ if config.getboolean('Section1', 'a_bool'):
 
 ###############################################################################
 # https://wiki.python.org/moin/ConfigParserExamples
+# https://docs.python.org/3/library/configparser.html
