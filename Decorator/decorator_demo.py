@@ -16,7 +16,7 @@ class myDecorator(object):
 
     def __call__(self):
         print("inside myDecorator.__call__()")
-        self.fn()
+        #self.fn()
         print("Exited", self.fn.__name__)
         
 
@@ -50,6 +50,7 @@ def function2():
 
 
 if __name__ == '__main__':
+    print("Inside main")
     function1()
     function2()
     print("Finished processing")

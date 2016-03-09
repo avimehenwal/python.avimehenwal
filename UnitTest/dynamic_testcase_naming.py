@@ -1,5 +1,27 @@
 """
 http://www.voidspace.org.uk/python/articles/introduction-to-unittest.shtml
+
+DDT Style testing with unittest
+
+test_bar_(a,b) (__main__.TestSequense) ... FAIL
+test_foo_(a,a) (__main__.TestSequense) ... ok
+test_lee_(b,b) (__main__.TestSequense) ... ok
+
+======================================================================
+FAIL: test_bar_(a,b) (__main__.TestSequense)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "dynamic_testcase_naming.py", line 14, in test
+    self.assertEqual(a,b)
+AssertionError: 'a' != 'b'
+- a
++ b
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=1)
 """
 
 import unittest
@@ -20,5 +42,3 @@ if __name__ == '__main__':
         test = test_generator(t[1], t[2])
         setattr(TestSequense, test_name, test)
     unittest.main(verbosity=3)
-
-
