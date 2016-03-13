@@ -15,7 +15,7 @@ class SomeTestClassName(unittest.TestCase):
 
     def test_case_1(self):
         print('SELF={}'.format(self))
-        import pdb; pdb.set_trace()
+        import pdb; set_trace()
 
     def test_case_2(self):
         pass
