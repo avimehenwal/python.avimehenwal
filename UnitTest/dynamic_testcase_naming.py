@@ -1,4 +1,6 @@
 """
+=> unittest accepts special characters in test-names
+
 http://www.voidspace.org.uk/python/articles/introduction-to-unittest.shtml
 
 DDT Style testing with unittest
@@ -26,7 +28,7 @@ FAILED (failures=1)
 
 import unittest
 
-l = [["foo", "a", "a",], ["bar", "a", "b"], ["lee", "b", "b"]]
+l = [["foo", "a", "a",], ["bar", "a", "b"], ["lee", "http://stackoverflow.com/questions/18426739/why-is-pyc-file-created-sometimes-in-same-directory-and-sometimes-in-pycache", "http://stackoverflow.com/questions/18426739/why-is-pyc-file-created-sometimes-in-same-directory-and-sometimes-in-pycache"]]
 
 class TestSequense(unittest.TestCase):
     pass
