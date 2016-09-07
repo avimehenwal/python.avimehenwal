@@ -27,3 +27,9 @@ Run keyword is variable exists
 
 Run keyword is variable do not exists
     Run Keyword If   $var1==""   Log  ${var1}
+
+Nul variable check and conditional kw execution
+    ${exists}=  Set Variable If  $var2==''   ${False}  ${True}
+    Log  ${exists}
+    ${exists}=  Set Variable If  $var2=='XYZ'   ${False}  ${True}
+    Log  ${exists}
