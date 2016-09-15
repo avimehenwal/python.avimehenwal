@@ -11,8 +11,8 @@ import datetime
 
 class Worker(threading.Thread):
     ''' Subclasses Worker from threading.Thread Class '''
-    
-    def __init__(self, name):        
+
+    def __init__(self, name):
         threading.Thread.__init__(self)
         self.name = name
         # can add more subclass attributes here
@@ -21,7 +21,7 @@ class Worker(threading.Thread):
         for i in range(1000000):
             pass
         return 0
-        
+
     def run(self):
         ''' Defines the block of code to be executes in notexplicitlly specified'''
 
@@ -39,16 +39,13 @@ if __name__ == '__main__':
     for i in range(no_of_threads):
         threads.append(Worker(i))
         # print "threads spawned and pushed to list queue but not yet started"
-        
+
 
     for i in threads:
         # Tells threading to start ecexuting the thread function run()
         p = i.start()
-        
-                
+
+
     for i in threads:
         # Blocks the code until all threads are executed.
         i.join()
-
-
-    
