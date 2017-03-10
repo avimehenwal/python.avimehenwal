@@ -6,7 +6,10 @@ import urllib2
 def get_url(q, url):
     q.put(urllib2.urlopen(url).read())
 
-theurls = ["http://google.com", "http://yahoo.com"]
+theurls = []
+with open('url_list_file.txt', 'r') as FD:
+    theurls = FD.read().splitlines()
+print theurls
 
 q = Queue.Queue()
 
