@@ -21,9 +21,9 @@ finally:
 # For ... Else loop
 def for_else(n):
     for i in n:
-        print 'Loop ', i
+        print('Loop', i)
     else:
-        print 'Else ', n
+        print('Else ', n)
 
 if __name__ == '__main__':
     for_else('avi')
