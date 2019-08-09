@@ -5,7 +5,7 @@
 
 import socket
 
-def isIPV6():   
+def isIPV6():
     ipv6 = True
     try:
         s = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)

@@ -1,10 +1,8 @@
-==================================
-+	   PORT SCANNER 	 +
-==================================
+# +	   PORT SCANNER 	 +
 
 ### FEATURES :
 1. Cross platform
-2. Remote as well as local host 
+2. Remote as well as local host
 
 ### IMPROVEMENTS :
 1. OOP Structure could be created
@@ -14,64 +12,73 @@
 1. Python 2.7 + should be installed
 
 
-> The socket module in Python provides access to the BSD socket interface. 
-> Sockets are widely used on the Internet, as they are behind any kind of network communications done by your computer. 
-> The INET sockets, account for at least 99% of the sockets in use. 
+> The socket module in Python provides access to the BSD socket interface.
+> Sockets are widely used on the Internet, as they are behind any kind of network communications done by your computer.
+> The INET sockets, account for at least 99% of the sockets in use.
 > The web browser’s that you use opens a socket and connects to the web server.
 > Any network communication goes through a socket.
 > Based on inbuilt module
 
 
-Socket functions
-=================================
+## Socket functions
 
+```python
 sock = socket.socket (socket_family, socket_type)
-	Syntax for creating a socket
+# Syntax for creating a socket
 
 sock = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
-	Creates a stream socket INET based TCP socket object
+# Creates a stream socket INET based TCP socket object
 
 AF_INET
-	Socket Family (here Address Family version 4 or IPv4)
+# Socket Family (here Address Family version 4 or IPv4)
 
 SOCK_STREAM
-	Socket type TCP connections
+# Socket type TCP connections
 
 SOCK_DGRAM
-	Socket type UDP connections
+# Socket type UDP connections
 
 gethostbyname("host")
-	Translate a host name to IPv4 address format
+# Translate a host name to IPv4 address format
 
 socket.gethostbyname_ex("host")
-	Translate a host name to IPv4 address format, extended interface
+# Translate a host name to IPv4 address format, extended interface
 
 socket.getfqdn("8.8.8.8")
-	Get the fqdn (fully qualified domain name)
+# Get the fqdn (fully qualified domain name)
 
 socket.gethostname()
-	Returns the hostname of the machine..
+# Returns the hostname of the machine..
 
 socket.error
-	Exception handling
+# Exception handling
+```
 
+`AF` stands for **Address Family** and `PF` stands for **Protocol Family**.
 
-List of available ports  http://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
-Socket Status Codes List http://msdn.microsoft.com/en-us/library/windows/desktop/ms740668(v=vs.85).aspx
+It denotes the kind of addresses a socket can communicate with. In this case, the socket uses IPv4 addressing. Similar families are `AF_INET6` for IPv6, `AF_UNIX` for IPC on Unix systems, `AF_BLUETOOTH` for Bluetooth and so on.
 
+Also `INET` stands for *INTERNET* in AF_INET and PF_INET,Meaning, AF_INET refers to *addresses from the internet*, IP addresses specifically. PF_INET refers to anything in the protocol, usually sockets/ports.AF_INET is an address family that is used to designate the type of addresses that your socket can communicate with (in this case, Internet Protocol v4 addresses). When you create a socket, you have to specify its address family, and then you can only use addresses of that type with the socket. For the most part, sticking with AF_INETfor socket programming over a network is the safest option. There is also AF_INET6for Internet Protocol v6 addresses. Same logic for Sock_stream.
+
+* List of available ports  http://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
+* Socket Status Codes List http://msdn.microsoft.com/en-us/library/windows/desktop/ms740668(v=vs.85).aspx
+
+---
+
+```
 10061 Connection refused.
 No connection could be made because the target computer actively refused it.
+```
+
 This usually results from trying to connect to a service that is inactive on the foreign host—that is, one with no server application running.
 
-==============================================
-Port scanning types
-==============================================
+## Port scanning types
 
 ### TCP scanning
-The simplest port scanners use the operating system's network functions and is generally the next option to go to when SYN is not a feasible option (described next). Nmap calls this mode connect scan, named after the Unix connect() system call. If a port is open, the operating system completes the TCP three-way handshake, and the port scanner immediately closes the connection to avoid performing a kind of Denial-of-service attack.[3] Otherwise an error code is returned. This scan mode has the advantage that the user does not require special privileges. However, using the OS network functions prevents low-level control, so this scan type is less common. This method is "noisy", particularly if it is a "portsweep": the services can log the sender IP address and Intrusion detection systems can raise an alarm.
+The simplest port scanners use the operating system's network functions and is generally the next option to go to when SYN is not a feasible option (described next). Nmap calls this mode connect scan, named after the Unix connect() system call. If a port is open, the operating system completes the TCP three-way handshake, and the port scanner immediately closes the connection to avoid performing a kind of Denial-of-service attack.[3] Otherwise an error code is returned. This scan mode has the advantage that the user does not require special privileges. However, using the OS network functions prevents low-level control, so this scan type is less common. This method is "noisy", particularly if it is a **portsweep**: the services can log the sender IP address and Intrusion detection systems can raise an alarm.
 
 ### SYN scanning
-SYN scan is another form of TCP scanning. Rather than use the operating system's network functions, the port scanner generates raw IP packets itself, and monitors for responses. This scan type is also known as "half-open scanning", because it never actually opens a full TCP connection. The port scanner generates a SYN packet. If the target port is open, it will respond with a SYN-ACK packet. The scanner host responds with a RST packet, closing the connection before the handshake is completed.[3] If the port is closed but unfiltered, the target will instantly respond with a RST packet.
+SYN scan is another form of TCP scanning. Rather than use the operating system's network functions, the port scanner generates raw IP packets itself, and monitors for responses. This scan type is also known as "half-open scanning", because it never actually opens a full TCP connection. The port scanner generates a SYN packet. If the target port is open, it will respond with a `SYN-ACK` packet. The scanner host responds with a `RST` packet, closing the connection before the handshake is completed.[3] If the port is closed but unfiltered, the target will instantly respond with a RST packet.
 The use of raw networking has several advantages, giving the scanner full control of the packets sent and the timeout for responses, and allowing detailed reporting of the responses. There is debate over which scan is less intrusive on the target host. SYN scan has the advantage that the individual services never actually receive a connection. However, the RST during the handshake can cause problems for some network stacks, in particular simple devices like printers. There are no conclusive arguments either way.
 
 ### UDP scanning
@@ -98,4 +105,3 @@ Some more unusual scan types exist. These have various limitations and are not w
 • Idle scan - Another method of scanning without revealing one's IP address, taking advantage of the predictable IP ID flaw.
 • CatSCAN - Checks ports for erroneous packets.
 • ICMP scan - determines if a host responds to ICMP requests, such as echo (ping), netmask, etc.
-
