@@ -6,3 +6,11 @@
 venv/*
 *.egg-info/
 *build/
+
+# python build
+doit-db.json
+
+# docs
+docs/.vuepress/dist
+docs/node_modules
+docs/yarn-error.log

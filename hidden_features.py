@@ -19,11 +19,14 @@ finally:
 """
 
 # For ... Else loop
+# region snippet
 def for_else(n):
+    """else in for loop is always executed"""
     for i in n:
         print('Loop', i)
     else:
         print('Else ', n)
+# endregion snippet
 
 if __name__ == '__main__':
     for_else('avi')
