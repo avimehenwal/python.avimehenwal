@@ -36,6 +36,7 @@ module.exports = {
     // anchor: { permalink: false },
     // options for markdown-it-toc
     // toc: { includeLevel: [1, 2] },
+    linkify: true,                // convert markdown link texts to links
     extendMarkdown: md => {
       md.use(require('markdown-it-container'))
       md.use(require('markdown-it-footnote'))
