@@ -1,3 +1,9 @@
+# python.avimehenwal
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/afbd0131-1f02-469f-a138-844511ca6420/deploy-status)](https://app.netlify.com/sites/avi-python/deploys)
+
+> python practise repo
+
 ## Pythonic
 
 - All generators are iterators BUT not all iterators are generators
@@ -9,7 +15,7 @@
 Creates item for computation one at a time and does not consumes more memory.
 
 **GIL**
-Python's GIL is intended to serialize access to interpreter internals from different threads. On multi-core systems, it means that multiple threads can't effectively make use of multiple cores. (If the GIL didn't lead to this problem, most people wouldn't care about the GIL - it's only being raised as an issue because of the increasing prevalence of multi-core systems.) 
+Python's GIL is intended to serialize access to interpreter internals from different threads. On multi-core systems, it means that multiple threads can't effectively make use of multiple cores. (If the GIL didn't lead to this problem, most people wouldn't care about the GIL - it's only being raised as an issue because of the increasing prevalence of multi-core systems.)
 Note that Python's GIL is only really an issue for CPython, the reference implementation. Jython and IronPython don't have a GIL. As a Python developer, you don't generally come across the GIL unless you're writing a C extension. C extension writers need to release the GIL when their extensions do blocking I/O, so that other threads in the Python process get a chance to run.
 
 
@@ -62,7 +68,7 @@ class Pizza(object):
     @staticmethod
     def mix_ingredients(x, y):
         return x + y
- 
+
     def cook(self):
         return self.mix_ingredients(self.cheese, self.vegetables)
 ```
@@ -91,8 +97,8 @@ Having said that, what are class methods? Class methods are methods that are not
 ...     @classmethod
 ...     def get_radius(cls):
 ...         return cls.radius
-... 
->>> 
+...
+>>>
 >>> Pizza.get_radius
 <bound method type.get_radius of <class '__main__.Pizza'>>
 >>> Pizza().get_radius
@@ -110,7 +116,7 @@ Factory methods, that are used to create an instance for a class using for examp
 class Pizza(object):
     def __init__(self, ingredients):
         self.ingredients = ingredients
- 
+
     @classmethod
     def from_fridge(cls, fridge):
         return cls(fridge.get_cheese() + fridge.get_vegetables())
@@ -122,15 +128,15 @@ class Pizza(object):
     def __init__(self, radius, height):
         self.radius = radius
         self.height = height
- 
+
     @staticmethod
     def compute_area(radius):
          return math.pi * (radius ** 2)
- 
+
     @classmethod
     def compute_volume(cls, height, radius):
          return height * cls.compute_area(radius)
- 
+
     def get_volume(self):
         return self.compute_volume(self.height, self.radius)
 ```
@@ -162,10 +168,10 @@ There's a way to triggers this way earlier, when the object is being instantiate
 
 ```python
 import abc
- 
+
 class BasePizza(object):
     __metaclass__  = abc.ABCMeta
- 
+
     @abc.abstractmethod
     def get_radius(self):
          """Method that should do something."""
@@ -184,14 +190,14 @@ Keep in mind that declaring a method as being abstract, doesn't freeze the proto
 
 ```python
 import abc
- 
+
 class BasePizza(object):
     __metaclass__  = abc.ABCMeta
- 
+
     @abc.abstractmethod
     def get_ingredients(self):
          """Returns the ingredient list."""
- 
+
 class Calzone(BasePizza):
     def get_ingredients(self, with_egg=False):
         egg = Egg() if with_egg else None
@@ -200,14 +206,14 @@ class Calzone(BasePizza):
 This is valid, since Calzone fulfil the interface requirement we defined for BasePizza objects. That means that we could also implement it as being a class or a static method, for example:
 ```python
 import abc
- 
+
 class BasePizza(object):
     __metaclass__  = abc.ABCMeta
- 
+
     @abc.abstractmethod
     def get_ingredients(self):
          """Returns the ingredient list."""
- 
+
 class DietPizza(BasePizza):
     @staticmethod
     def get_ingredients():
@@ -218,12 +224,12 @@ This is also correct and fulfil the contract we have with our abstract BasePizza
 Therefore, you can't force an implementation of your abstract method to be a regular, class or static method, and arguably you shouldn't. Starting with Python 3 (this won't work as you would expect in Python 2, see issue5867), it's now possible to use the @staticmethod and @classmethod decorators on top of @abstractmethod:
 ```python
 import abc
- 
+
 class BasePizza(object):
     __metaclass__  = abc.ABCMeta
- 
+
     ingredient = ['cheese']
- 
+
     @classmethod
     @abc.abstractmethod
     def get_ingredients(cls):
@@ -235,20 +241,35 @@ Don't misread this: if you think this going to force your subclasses to implemen
 An implementation in an abstract method? Yes! In Python, contrary to methods in Java interfaces, you can have code in your abstract methods and call it via super():
 ```python
 import abc
- 
+
 class BasePizza(object):
     __metaclass__  = abc.ABCMeta
- 
+
     default_ingredients = ['cheese']
- 
+
     @classmethod
     @abc.abstractmethod
     def get_ingredients(cls):
          """Returns the ingredient list."""
          return cls.default_ingredients
- 
+
 class DietPizza(BasePizza):
     def get_ingredients(self):
         return ['egg'] + super(DietPizza, self).get_ingredients()
 ```
 In such a case, every pizza you will build by inheriting from BasePizza will have to override the get_ingredients method, but will be able to use the default mechanism to get the ingredient list by using super().
+
+
+#### Get in touch with me
+
+> I am looking for Jobs ... :sunglasses:
+
+* [Github](https://github.com/avimehenwal/)
+* [My Website](https://avimehenwal.in)
+* [Twitter Handle](https://twitter.com/avimehenwal)
+* [LinkedIn](https://in.linkedin.com/in/avimehenwal)
+* [Stackoverflow](https://stackoverflow.com/users/1915935/avi-mehenwal)
+
+<a href="https://www.buymeacoffee.com/F1j07cV" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+
+ Spread Love :hearts: and not :no_entry_sign: hatred   [![Twitter Follow](https://img.shields.io/twitter/follow/avimehenwal.svg?style=social)](https://twitter.com/avimehenwal)
