@@ -1,6 +1,23 @@
 # Hello VuePress
 
-<<< @/hidden_features.py#snippet{5}
+## Mermaid
+
+``` mermaid
+sequenceDiagram
+Alice->John: Hello John, how are you?
+loop every minute
+    John-->Alice: Great!
+end
+```
+
+```mermaid
+pie title Pets adopted by volunteers
+	"Dogs" : 386
+	"Cats" : 85
+	"Rats" : 15
+```
+
+<<< @/../hidden_features.py#snippet{5}
 
 ### sub
 H~2~0

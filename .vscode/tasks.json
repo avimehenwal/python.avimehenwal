@@ -6,11 +6,13 @@
         {
             "label": "Build docs",
             "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/docs"
+            },
             "command": "vuepress",
             "args": [
-                "dev",
-                "docs",
-            ]
+                "dev"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
