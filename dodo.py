@@ -19,3 +19,11 @@ def task_docs_build():
     return {
         'actions': [cmd],
     }
+
+def task_update_deps():
+    """Update pip requirnments.txt file"""
+    cmd = 'pip freeze | tee requirements.txt'
+    return {
+        'actions': [cmd],
+        'targets': ["requirements.txt"]
+    }

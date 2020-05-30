@@ -13,6 +13,12 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Update requirements.txt file",
+            "type": "shell",
+            "command": "${workspaceFolder}/venv/bin/doit",
+            "args": [ "update_deps" ]
         }
     ]
 }
