@@ -6,6 +6,10 @@
   "repository": "https://github.com/avimehenwal/python.avimehenwal",
   "author": "avimehenwal",
   "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
   "dependencies": {
     "remove": "^0.1.5"
   },

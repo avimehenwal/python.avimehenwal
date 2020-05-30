@@ -1,5 +1,9 @@
 # Hello VuePress
 
+<Badge type="tip" vertical="top" text="beta+"  />
+<Badge type="warning" vertical="top" text="beta+"  />
+<Badge type="error" vertical="top" text="beta+"  />
+
 ## Mermaid
 
 ``` mermaid

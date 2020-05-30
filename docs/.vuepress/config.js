@@ -29,8 +29,7 @@ module.exports = {
     ]
   },
   plugins: [
-    // 'mermaidjs',
-    'vuepress-plugin-mermaidjs'
+    [ 'vuepress-plugin-mermaidjs', { theme: 'forest'}],
   ],
   markdown: {
     // options for markdown-it-anchor
@@ -50,3 +49,5 @@ module.exports = {
     }
   }
 }
+
+// https://github.com/avimehenwal/avimehenwal2/blob/master/content/.vuepress/config.js
