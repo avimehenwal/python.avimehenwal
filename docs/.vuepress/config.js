@@ -24,8 +24,8 @@ module.exports = {
     smoothScroll: true,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/' },
-      { text: 'External', link: 'https://google.com' }
+      { text: 'Tutorials', link: '/tutorial/' },
+      { text: 'Projects', link: '/projects/' }
     ]
   },
   plugins: [
