@@ -18,6 +18,7 @@ finally:
     # always executed
 """
 
+
 # For ... Else loop
 # region snippet
 def for_else(n):
@@ -28,9 +29,10 @@ def for_else(n):
         print('Else ', n)
 # endregion snippet
 
+
 if __name__ == '__main__':
     for_else('avi')
     for_else([])
-    for_else([1,3,4])
+    for_else([1, 3, 4])
 
 # END

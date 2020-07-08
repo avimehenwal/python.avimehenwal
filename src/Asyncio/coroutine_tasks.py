@@ -1,6 +1,13 @@
 import asyncio
 import random
 
+
+"""
+https://en.wikipedia.org/wiki/Coroutine
+https://en.wikipedia.org/wiki/Coroutine#Implementations_for_Python
+"""
+
+
 @asyncio.coroutine
 def get_url(url):
     wait_time = random.randint(1, 4)

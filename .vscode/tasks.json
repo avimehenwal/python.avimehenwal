@@ -1,14 +1,19 @@
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
+    // https://code.visualstudio.com/docs/editor/variables-reference#_predefined-variables
     "version": "2.0.0",
     "tasks": [
         {
             "label": "Build docs",
             "type": "shell",
-            "options": { "cwd": "${workspaceFolder}/docs" },
+            "options": {
+                "cwd": "${workspaceFolder}/docs"
+            },
             "command": "vuepress",
-            "args": [ "dev" ],
+            "args": [
+                "dev"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -18,7 +23,23 @@
             "label": "Update requirements.txt file",
             "type": "shell",
             "command": "${workspaceFolder}/venv/bin/doit",
-            "args": [ "update_deps" ]
-        }
+            "args": [
+                "update_deps"
+            ]
+        },
+        {
+            "label": "Run flake8 on currentfile",
+            "type": "shell",
+            // "options": { "cwd": "${workspaceFolder}/src" },
+            "command": "${workspaceFolder}/venv/bin/flake8",
+            "args": [
+                "${file}"
+            ],
+            // "args": [ "--help" ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
     ]
 }
