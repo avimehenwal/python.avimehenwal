@@ -14,3 +14,6 @@ doit-db.json
 docs/.vuepress/dist
 docs/node_modules
 docs/yarn-error.log
+
+# root
+node_modules/
