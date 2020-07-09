@@ -28,6 +28,11 @@ tags:
   * vue mixins
 * **Dunder**/Magic/Special methods in Python
   * double underscore methods
+* [How are dict implemented in python?](http://effbot.org/pyfaq/how-are-dictionaries-implemented.htm)
+* Arguments vs Parameters
+  * [call by assignment](https://docs.python.org/3/faq/programming.html#how-do-i-write-a-function-with-output-parameters-call-by-reference)
+  * call by references, howto in python?
+  * call by value
 
 Pickeling/Unpickeling
 : Pickling is converting an object to a string representation in python. Generally used for caching and transferring objects between hosts/processes.

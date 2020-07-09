@@ -120,6 +120,27 @@ to eliminate cycles). The memory is freed shortly after the last reference to it
 
 > What is monkey patching? How to use it in Python? Example? Is it ever a good idea?
 
+## Descriptors
+
+> used to describe something
+
+* https://docs.python.org/3/howto/descriptor.html
+
+## Good Questions
+
+*  Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really work in parallel? What about GIL?
+   * [Why GIL still exists in CPython?](https://wiki.python.org/moin/GlobalInterpreterLock)
+* Dependency
+  * Functional Dependencies **FDs**
+    * If ( t1(A) == t2(A)) then ( t1(B) = t2(B) )
+    * duplicated are acceptable as long as the condition is satisfied
+  * Direct Dependency
+  * [Transitive Dependency](https://en.wikipedia.org/wiki/Transitive_dependency)
+    * Third Normal Form **3NF** - Avoid transitive dependency to save space
+  * Partial Dependency **2NF**
+  * **1NF** remove all Multivalued (multiple phone nos) and Composite (Residence Address) date entries
+    * by breaking/decomposing data into atomic values seperate tables
+* What are the wheels and eggs? What is the difference?
 
 
 ### 1.9.1. References
