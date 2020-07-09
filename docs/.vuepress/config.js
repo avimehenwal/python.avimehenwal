@@ -32,7 +32,16 @@ module.exports = {
     ]
   },
   plugins: [
+    "@vuepress/plugin-active-header-links",
+    "@vuepress/plugin-last-updated",
+    "@vuepress/plugin-medium-zoom",
+    "@vuepress/plugin-back-to-top",
+    "vuepress-plugin-auto-sidebar",
+    "@vuepress/plugin-nprogress",
+    "@vuepress/plugin-blog",
+    "@vuepress/pwa",
     [ 'vuepress-plugin-mermaidjs', { theme: 'forest'}],
+    [ '@vuepress/google-analytics', { 'ga': process.env.GA } ],
   ],
   markdown: {
     // options for markdown-it-anchor
