@@ -15,7 +15,8 @@
         "plugins",
         "vue",
         "netlify",
-        "component"
+        "component",
+        "node"
     ],
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
