@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Python programming',
+  title: 'Programming',
   description: 'Avi Mehenwal python programming practise',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
@@ -17,7 +17,7 @@ module.exports = {
     repoLabel: 'GitHub',
     editLinks: true,
     editLinkText: 'Help me improve this page!',
-    // logo: '/logo4.svg',
+    logo: '/logo.svg',
     // displayAllHeaders: true,               // Default: false
     activeHeaderLinks: true,
     sidebar: 'auto',
@@ -40,7 +40,25 @@ module.exports = {
     "@vuepress/plugin-nprogress",
     "@vuepress/plugin-blog",
     "@vuepress/pwa",
-    [ 'vuepress-plugin-mermaidjs', { theme: 'forest'}],
+    // https://mermaid-js.github.io/mermaid/#/mermaidAPI?id=mermaidapi-configuration-defaults
+    [ 'vuepress-plugin-mermaidjs', {
+      // "theme": 'forest',
+      // "theme": 'dark',
+      "theme": "default",
+      // "font-size": "20",
+      gantt: {
+        titleTopMargin:20,
+        barHeight:30,
+        barGap:10,
+        topPadding:50,
+        leftPadding:0,
+        gridLineStartPadding:10,
+        fontSize:25,
+        fontFamily:'"Open-Sans", "sans-serif"',
+        numberSectionStyles:4,
+        axisFormat:'%Y-%m-%d',
+      }
+    }],
     [ '@vuepress/google-analytics', { 'ga': process.env.GA } ],
   ],
   markdown: {
