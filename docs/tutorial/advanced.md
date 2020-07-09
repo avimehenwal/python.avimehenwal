@@ -141,6 +141,9 @@ to eliminate cycles). The memory is freed shortly after the last reference to it
   * **1NF** remove all Multivalued (multiple phone nos) and Composite (Residence Address) date entries
     * by breaking/decomposing data into atomic values seperate tables
 * What are the wheels and eggs? What is the difference?
+* When to change version? Major | Minor version change
+  * When not backward compatible => Major change
+    * Example python 2 and python 3
 
 
 ### 1.9.1. References
