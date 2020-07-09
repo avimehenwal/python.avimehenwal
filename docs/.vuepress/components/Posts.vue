@@ -40,7 +40,7 @@
   <ol>
   <div v-for="page in pages">
     <li>
-      <a href="page.regularPath">
+      <a :href="page.regularPath">
         <h3>
           {{ page.title }}
         </h3>

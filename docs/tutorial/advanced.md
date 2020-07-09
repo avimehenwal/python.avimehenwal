@@ -89,9 +89,10 @@ However, at least in python, they are only readonly.
 
 ## 1.4. Decorators
 
-> Preprocessing the arguments to decorated function
+> Preprocessing/Postprocessing the arguments/returns to decorated function
 
 * Can add multiple decorators to a function
+* Decorators in Python are used to modify or inject code in functions or classes. Using decorators, you can wrap a class or function method call so that a piece of code can be executed before or after the execution of the original code. Decorators can be used to check for permissions, modify or track the arguments passed to a method, logging the calls to a specific method, etc.
 
 ## 1.5. Coroutines
 
@@ -105,7 +106,23 @@ to eliminate cycles). The memory is freed shortly after the last reference to it
 
 ## 1.7. GIL - Global Interpreted Lock
 
-### 1.7.1. References
+
+## 1.8. [Metaprogramming]
+
+> treat other programs as data
+
+* [Metaclasses](https://en.wikipedia.org/wiki/Metaclass) are provided by python
+  * a metaclass is a class whose instances are classes.
+  * instance of a normal class is an bounded object in memory
+* https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python
+
+## 1.9. [Monkey Patching]
+
+> What is monkey patching? How to use it in Python? Example? Is it ever a good idea?
+
+
+
+### 1.9.1. References
 
 * [Parent pointer tree/ Spaghetti/cactus stack](https://en.wikipedia.org/wiki/Parent_pointer_tree)
 * [Python Grammer Specification](https://docs.python.org/3/reference/grammar.html)
@@ -114,6 +131,7 @@ to eliminate cycles). The memory is freed shortly after the last reference to it
 
 
 [closure]: https://en.wikipedia.org/wiki/Closure_(computer_programming)
-
+[Metaprogramming]: https://en.wikipedia.org/wiki/Metaprogramming
+[monkey patching]: https://en.wikipedia.org/wiki/Monkey_patch
 
 <Footer />

@@ -23,5 +23,8 @@ tags:
 * https://www.priceintelligently.com/
 * https://www.google.com/search?q=SaaS&newwindow=1&hl=en&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjciOvMtdrpAhUcZxUIHXqyBmIQ_AUoAXoECDoQAw&biw=1294&bih=641#imgrc=Qwze79n_6S-sMM
 
+## 1.3. Interview Prep
+
+* https://github.com/MaximAbramchuck/awesome-interview-questions
 
 <Footer />

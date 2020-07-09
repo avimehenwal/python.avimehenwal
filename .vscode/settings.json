@@ -12,7 +12,8 @@
         "lint",
         "release",
         "vscode",
-        "plugins"
+        "plugins",
+        "vue"
     ],
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
