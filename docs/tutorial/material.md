@@ -7,10 +7,16 @@ tags:
 - material
 ---
 
-# Python study material
+# 1. Python study material
 
 <TagLinks />
 
+## 1.1. Official resources
+
+* https://www.python.org/about/gettingstarted/
+* https://docs.python.org/3/tutorial/index.html
+
+## 1.2. Others
 
 * https://gist.github.com/sloria/7001839
 * https://github.com/willmcgugan/rich
