@@ -1,6 +1,9 @@
 module.exports = {
   title: 'Python programming',
   description: 'Avi Mehenwal python programming practise',
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   configureWebpack: {
     resolve: {
       alias: {
