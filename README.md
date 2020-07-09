@@ -18,6 +18,7 @@ Link to Project [docs]
 
 * [Github](https://github.com/avimehenwal/)
 * [My Website](https://avimehenwal.in)
+* [My Blog v2](https://avimehenwal2.netlify.app/)
 * [Twitter Handle](https://twitter.com/avimehenwal)
 * [LinkedIn](https://in.linkedin.com/in/avimehenwal)
 * [Stackoverflow](https://stackoverflow.com/users/1915935/avi-mehenwal)

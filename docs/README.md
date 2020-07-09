@@ -1,21 +1,14 @@
-# Python docs
+# 1. Python docs
 
 ![Python programming logo](/logo.svg)
 
-## Pythonic
+## 1.1. Pythonic
 
 - All generators are iterators BUT not all iterators are generators
-- Generators are usually attached to functions have next() method and yield
+- Generators are usually attached to functions have `next()` method and `yield`
 - Iterator creates a list generator generates ONE item at a time for computation
+  * Iterator *advantages* Creates item for computation one at a time and does not consumes more memory. **Lazy Loading**
 - Python supports MULTIPLE INHERITANCE
-
-*ADANTAGES*
-Creates item for computation one at a time and does not consumes more memory.
-
-**GIL**
-Python's GIL is intended to serialize access to interpreter internals from different threads. On multi-core systems, it means that multiple threads can't effectively make use of multiple cores. (If the GIL didn't lead to this problem, most people wouldn't care about the GIL - it's only being raised as an issue because of the increasing prevalence of multi-core systems.)
-Note that Python's GIL is only really an issue for CPython, the reference implementation. Jython and IronPython don't have a GIL. As a Python developer, you don't generally come across the GIL unless you're writing a C extension. C extension writers need to release the GIL when their extensions do blocking I/O, so that other threads in the Python process get a chance to run.
-
 
 ```python
 class Base1:
@@ -37,28 +30,43 @@ class Derived2(Derived1):
     pass
 ```
 
-**Python Operator Overloading**
-Python operators work for built-in classes. But same operator behaves differently with different types. For example, the + operator will, perform arithmetic addition on two numbers, merge two lists and concatenate two strings. This feature in Python, that allows same operator to have different meaning according to the context is called operator overloading.
+## 1.2. GIL - Global Interpreted Lock
 
-**POLYMORPHISM WITH PYTHON**
-A common real example in Python is file-like objects. Besides actual files, several other types, including StringIO and BytesIO, are file-like. A method that acts as files can also act on them because they support the required methods (e.g. read, write).
+Python's GIL is intended to serialize access to interpreter internals from different threads. On multi-core systems, it means that multiple threads can't effectively make use of multiple cores. (If the GIL didn't lead to this problem, most people wouldn't care about the GIL - it's only being raised as an issue because of the increasing prevalence of multi-core systems.)
+Note that Python's GIL is only really an issue for CPython, the reference implementation. Jython and IronPython don't have a GIL. As a Python developer, you don't generally come across the GIL unless you're writing a C extension. C extension writers need to release the GIL when their extensions do blocking I/O, so that other threads in the Python process get a chance to run.
 
-**ENCAPSULATION (Accessability)**
-private attributes are defined by special syntax self.__a same with methods.
-def __methodName(self):
+## 1.3. OOP - Object Oriented Programming
+
+### 1.3.1. Python Operator Overloading
+
+Python operators work for built-in classes. But same operator behaves differently with different types.
+
+**For example,** the `+` operator will, perform arithmetic addition on two numbers, merge two lists and concatenate two strings. This feature in Python, that allows same operator to have different meaning according to the context is called operator overloading.
+
+### 1.3.2. Polymorphism
+
+A common real example in Python is **file-like objects**. Besides actual files, several other types, including `StringIO` and `BytesIO`, are file-like. A method that acts as files can also act on them because they support the required methods (e.g. read, write).
+
+### 1.3.3. Encapsulation (Accessability)
+
+private attributes are defined by special syntax `self.__a` same with methods.
+`def __methodName(self):`
 
 Major Difference between Python 2 and Python 3:
+
 1. print is now a function instead of keyword
 2. xrange (iterable) is now replaced with range()
 3. python 3 supports Unicode
 4. raw_input() is replaced by input() method
 
-### Python Classes and Functions
+### 1.3.4. Python Classes and Functions
+
 - New Classes and old classes. Diffreence ?
 - Though classmethod and staticmethod are quite similar, there's a slight difference in usage for both entities: classmethod must have a reference to a class object as the first parameter, whereas staticmethod can have no parameters at all.
 - Classmethods leads to Factory Design pattern in python
 
-### Python @staticmethod
+### 1.3.5. Python @staticmethod
+
 Static methods are a special case of methods. Sometimes, you'll write code that belongs to a class, but that doesn't use the object itself at all. For example:
 
 ```python
@@ -73,7 +81,10 @@ class Pizza(object):
 
 In such a case, writing mix_ingredients as a non-static method would work too, but it would provide it a self argument that would not be used. Here, the decorator @staticmethod buys us several things:
 
-Python doesn't have to instantiate a bound-method for each Pizza object we instiantiate. Bound methods are objects too, and creating them has a cost. Having a static method avoids that:
+::: tip @staticmethod
+Python doesn't have to instantiate a bound-method for each Pizza object we instiantiate.
+Bound methods are objects too, and creating them has a cost. Having a static method avoids that:
+:::
 
 ```python
 >>> Pizza().cook is Pizza().cook
@@ -87,8 +98,10 @@ True
 It eases the readability of the code: seeing @staticmethod, we know that the method does not depend on the state of object itself;
 It allows us to override the mix_ingredients method in a subclass. If we used a function mix_ingredients defined at the top-level of our module, a class inheriting from Pizza wouldn't be able to change the way we mix ingredients for our pizza without overriding cook itself.
 
-### Python @classmethods
+### 1.3.6. Python @classmethods
+
 Having said that, what are class methods? Class methods are methods that are not bound to an object, but to… a class!
+
 ```python
 >>> class Pizza(object):
 ...     radius = 42
@@ -106,6 +119,7 @@ True
 >>> Pizza.get_radius()
 42
 ```
+
 Whatever the way you use to access this method, it will be always bound to the class it is attached too, and its first argument will be the class itself (remember that classes are objects too).
 When to use this kind of methods? Well class methods are mostly useful for two types of methods:
 Factory methods, that are used to create an instance for a class using for example some sort of pre-processing. If we use a @staticmethod instead, we would have to hardcode the Pizza class name in our function, making any class inheriting from Pizza unable to use our factory for its own use.
@@ -121,6 +135,7 @@ class Pizza(object):
 ```
 
 Static methods calling static methods: if you split a static methods in several static methods, you shouldn't hard-code the class name but use class methods. Using this way to declare ou method, the Pizza name is never directly referenced and inheritance and method overriding will work flawlessly
+
 ```python
 class Pizza(object):
     def __init__(self, radius, height):
@@ -139,9 +154,9 @@ class Pizza(object):
         return self.compute_volume(self.height, self.radius)
 ```
 
-### Abstract methods
+### 1.3.7. Abstract methods
 
-An abstract method is a method defined in a base class, but that may not provide any implementation. In Java, it would describe the methods of an interface.
+An abstract method is a method defined in a base class, but that **may not provide any implementation**. In Java, it would describe the methods of an interface.
 So the simplest way to write an abstract method in Python is:
 
 ```python
@@ -174,7 +189,9 @@ class BasePizza(object):
     def get_radius(self):
          """Method that should do something."""
 ```
+
 Using abc and its special class, as soon as you'll try to instantiate BasePizza or any class inheriting from it, you'll get a TypeError.
+
 ```python
 >>> BasePizza()
 Traceback (most recent call last):
@@ -182,7 +199,8 @@ Traceback (most recent call last):
 TypeError: Can't instantiate abstract class BasePizza with abstract methods get_radius
 ```
 
-### Mixing static, class and abstract methods
+### 1.3.8. Mixing static, class and abstract methods
+
 When building classes and inheritances, the time will come where you will have to mix all these methods decorators. So here's some tips about it.
 Keep in mind that declaring a method as being abstract, doesn't freeze the prototype of that method. That means that it must be implemented, but i can be implemented with any argument list.
 
@@ -201,7 +219,9 @@ class Calzone(BasePizza):
         egg = Egg() if with_egg else None
         return self.ingredients + egg
 ```
+
 This is valid, since Calzone fulfil the interface requirement we defined for BasePizza objects. That means that we could also implement it as being a class or a static method, for example:
+
 ```python
 import abc
 
@@ -217,9 +237,11 @@ class DietPizza(BasePizza):
     def get_ingredients():
         return None
 ```
+
 This is also correct and fulfil the contract we have with our abstract BasePizza class. The fact that the get_ingredients method don't need to know about the object to return result is an implementation detail, not a criteria to have our contract fulfilled.
 
-Therefore, you can't force an implementation of your abstract method to be a regular, class or static method, and arguably you shouldn't. Starting with Python 3 (this won't work as you would expect in Python 2, see issue5867), it's now possible to use the @staticmethod and @classmethod decorators on top of @abstractmethod:
+Therefore, you can't force an implementation of your abstract method to be a regular, class or static method, and arguably you shouldn't. Starting with Python 3 (this won't work as you would expect in Python 2, see issue5867), it's now possible to use the @staticmethod and `@classmethod` decorators on top of @abstractmethod:
+
 ```python
 import abc
 
@@ -234,9 +256,11 @@ class BasePizza(object):
          """Returns the ingredient list."""
          return cls.ingredients
 ```
+
 Don't misread this: if you think this going to force your subclasses to implement get_ingredients as a class method, you are wrong. This simply implies that your implementation of get_ingredients in the BasePizza class is a class method.
 
-An implementation in an abstract method? Yes! In Python, contrary to methods in Java interfaces, you can have code in your abstract methods and call it via super():
+An implementation in an abstract method? Yes! In Python, contrary to methods in Java interfaces, you can have code in your abstract methods and call it via `super()`:
+
 ```python
 import abc
 
@@ -255,10 +279,11 @@ class DietPizza(BasePizza):
     def get_ingredients(self):
         return ['egg'] + super(DietPizza, self).get_ingredients()
 ```
+
 In such a case, every pizza you will build by inheriting from BasePizza will have to override the get_ingredients method, but will be able to use the default mechanism to get the ingredient list by using super().
 
 
-#### Get in touch with me
+#### 1.3.8.1. Get in touch with me
 
 > I am looking for Jobs ... :sunglasses:
 
