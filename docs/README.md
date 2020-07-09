@@ -1,5 +1,6 @@
 # Python docs
 
+![Python programming logo](/logo.svg)
 
 ## Pythonic
 

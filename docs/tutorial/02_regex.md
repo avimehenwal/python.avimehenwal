@@ -9,10 +9,13 @@ tags:
 - pattern
 ---
 
-# Regular Expressions
+# 1. Regular Expressions
 
 <TagLinks />
 
+## 1.1. Vocabulary
+
+* Qualifiers, Metacharacters, Metaclasses
 * RE works on characters
   * `[0-9]` valid
   * `[0-255]` will get translated to `[0-2]`
@@ -28,7 +31,7 @@ Pattern | Description
 `(?P<name>)` | named RE pattern
 `(?P=name)` | named RE pattern reference
 
-## RE Repetition Qualifiers
+## 1.2. RE Repetition Qualifiers
 
 * Non-greedy varients (usually followed by `?`)
 
@@ -67,12 +70,12 @@ $                       # last character match followed by a space
 /^(?:(?P<octet>[0-9]{1,3})\.){3}(?P=octet)$/
 ```
 
-### RegEx Assertions
+### 1.2.1. RegEx Assertions
 
 Matching and returning the matches based on assertions either by looking forward in the blob or
 by looking backward
 
-#### Positive Lookahead Assertion
+#### 1.2.1.1. Positive Lookahead Assertion
 
 Consider the case where use want to match **only** *Issac Asimov* and **not** *Issac Newton*
 
@@ -85,7 +88,7 @@ Issac Newton | :x:
 Issac (?=Asimov)
 ```
 
-#### Negative Lookahead Assertion
+#### 1.2.1.2. Negative Lookahead Assertion
 
 Reverse the above situation, we want all other *Issacs* which are **not** followed by *Asimov*.
 We want *Issac* from *Issac Newton* this time.
@@ -99,7 +102,7 @@ Issac Newton | :heavy_check_mark: Issac
 Issac (?!Asimov)
 ```
 
-#### Positive Lookbehind Assertion
+#### 1.2.1.3. Positive Lookbehind Assertion
 
 Blob | Pattrn Match return
 :------:|--------------
@@ -112,7 +115,7 @@ Consider we want *Mehenwal* **only** from *Avi Mehenwal* and **not** from *Shubh
 (?<=Avi) Mehenwal
 ```
 
-#### Negative Lookbehind Assertion
+#### 1.2.1.4. Negative Lookbehind Assertion
 
 Blob | Pattrn Match return
 :------:|--------------
@@ -126,9 +129,10 @@ We want *Mehenwal* from *Shubhranshu Mehenwal*
 (?<!Avi) Mehenwal
 ```
 
-## Resources
+## 1.3. Resources
 
 * https://www.regular-expressions.info/refrepeat.html
+* [Test and explain your RE](https://regex101.com/)
 
 *[RE]: Regular Expressions | regex
 

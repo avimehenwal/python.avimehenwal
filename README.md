@@ -8,6 +8,8 @@ Link to Project [docs]
 
 ![List Page on mobile](demo/mobile-listpage.png)
 
+![Homepage with logo](/demo/homepage-with-logo.png)
+
 ---
 
 #### Get in touch with me

@@ -1,5 +1,5 @@
 ---
-title: Python study material
+title: Study material
 tags:
 - python
 - resources

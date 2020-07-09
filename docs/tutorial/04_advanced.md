@@ -104,6 +104,8 @@ They can be implemented with the `async def` statement.
 Python does automatic memory management (reference counting for most objects and **garbage collection**
 to eliminate cycles). The memory is freed shortly after the last reference to it has been eliminated.
 
+Python memory is managed by Python **private heap space**. All Python objects and data structures are located in a private heap. The programmer does not have an access to this private heap and interpreter takes care of this Python private heap.
+
 ## 1.7. GIL - Global Interpreted Lock
 
 
@@ -120,13 +122,13 @@ to eliminate cycles). The memory is freed shortly after the last reference to it
 
 > What is monkey patching? How to use it in Python? Example? Is it ever a good idea?
 
-## Descriptors
+## 1.10. Descriptors
 
 > used to describe something
 
 * https://docs.python.org/3/howto/descriptor.html
 
-## Good Questions
+## 1.11. Good Questions
 
 *  Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really work in parallel? What about GIL?
    * [Why GIL still exists in CPython?](https://wiki.python.org/moin/GlobalInterpreterLock)
@@ -146,7 +148,7 @@ to eliminate cycles). The memory is freed shortly after the last reference to it
     * Example python 2 and python 3
 
 
-### 1.9.1. References
+### 1.11.1. References
 
 * [Parent pointer tree/ Spaghetti/cactus stack](https://en.wikipedia.org/wiki/Parent_pointer_tree)
 * [Python Grammer Specification](https://docs.python.org/3/reference/grammar.html)

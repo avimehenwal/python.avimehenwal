@@ -35,7 +35,7 @@ tags:
   * call by value
 
 Pickeling/Unpickeling
-: Pickling is converting an object to a string representation in python. Generally used for caching and transferring objects between hosts/processes.
+: Pickling is converting an object to a string representation in python. Generally used for caching and transferring objects between hosts/processes. Python Objects => Strings
 
 Lambda Function
 : Lambda in Python is an anonymous function created at runtime. E.g.
@@ -73,6 +73,22 @@ Since strings are stored as an array of type `char` in memory, these could be ma
 List comprehensions
 : which creates a new list based on another list, in a single, readable line.
 
+### 1.4.1. Types of comprehensions in Python
+
+Comprehensions in Python provide us with a short and concise way to construct new sequences (such as lists, set, dictionary etc.)
+
+```mermaid
+graph LR
+A(Coprehensions):::orange --> B[List Comprehension]
+A --> C[Dictionary Comprehension]
+A --> D[Generator Comprehension]
+A --> E[Set Comprehension]
+
+
+classDef orange fill:#f96;
+classDef purple fill:#f9f,stroke:#333,stroke-width:4px;
+```
+
 ## 1.5. Manupulation Techniques
 
 * Type checking using `is` or `instance` keyword
@@ -89,10 +105,10 @@ Objects have individuality, and multiple names (in multiple scopes) can be bound
 to the same object. This is known as aliasing in other languages.
 :::
 
-* scopes and Namespaces
+## 1.7. Scopes and Namespaces
 
 Namespace created by interpreter
-: is a mapping from names to objects. Most namespaces are currently implemented as Python dictionaries, but that’s normally not noticeable in any way (except for performance), and it may change in the future.
+: is a mapping from names to objects. Most namespaces are currently implemented as Python dictionaries, but that’s normally not noticeable in any way (except for performance), and it may change in the future. It is like a box where a variable name is mapped to the object placed. Whenever the variable is searched out, this box will be searched, to get corresponding object.
 
 * global namespace at startup
 * local namespace when function is called, deleted, exception, modified etc.
@@ -114,8 +130,12 @@ Scope
   * [Diamond Relationship Problem](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem)
 * “Private” instance variables that cannot be accessed except from inside an object don’t exist in Python.
 
+## General Questions
 
-### 1.6.1. References
+* Modules and Packages
+  * modules for BI and module for GUI combined together to form a Packages
+
+### 1.7.1. References
 
 * https://pyformat.info/
 
