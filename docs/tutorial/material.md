@@ -27,4 +27,4 @@ tags:
 
 * https://github.com/MaximAbramchuck/awesome-interview-questions
 
-<Footer />
+

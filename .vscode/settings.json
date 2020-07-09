@@ -14,7 +14,8 @@
         "vscode",
         "plugins",
         "vue",
-        "netlify"
+        "netlify",
+        "component"
     ],
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,

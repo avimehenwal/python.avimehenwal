@@ -155,4 +155,4 @@ to eliminate cycles). The memory is freed shortly after the last reference to it
 [Metaprogramming]: https://en.wikipedia.org/wiki/Metaprogramming
 [monkey patching]: https://en.wikipedia.org/wiki/Monkey_patch
 
-<Footer />
+
