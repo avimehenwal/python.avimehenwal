@@ -4,6 +4,7 @@
 
 > python practise repo
 
+Link to Project [docs]
 
 
 #### Get in touch with me
@@ -19,3 +20,6 @@
 <a href="https://www.buymeacoffee.com/F1j07cV" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 
  Spread Love :hearts: and not :no_entry_sign: hatred   [![Twitter Follow](https://img.shields.io/twitter/follow/avimehenwal.svg?style=social)](https://twitter.com/avimehenwal)
+
+
+[docs]: https://avi-python.netlify.app/

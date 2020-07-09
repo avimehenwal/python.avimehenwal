@@ -11,7 +11,10 @@
         "readme",
         "lint",
         "release",
-        "vscode"
+        "vscode",
+        "plugins",
+        "vue",
+        "netlify"
     ],
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
