@@ -1,6 +1,6 @@
 {
-  "name": "pythonDocs",
-  "version": "1.0.0",
+  "name": "python-docs",
+  "version": "1.1.1",
   "description": "Python documents",
   "main": "index.js",
   "repository": "https://github.com/avimehenwal/python.avimehenwal",
@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "docs:dev": "vuepress dev",
-    "docs:build": "vuepress build"
+    "docs:build": "vuepress build",
+    "cl": "standard-version --dry-run"
   },
   "dependencies": {
     "remove": "^0.1.5"

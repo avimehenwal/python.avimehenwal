@@ -8,7 +8,7 @@ tags:
 - features
 ---
 
-# New Python Features
+# :new: New Python Features
 
 <TagLinks />
 
@@ -30,4 +30,4 @@ string myArg1 = "this is my argument";
 myClass.MyMethod(myArg1);
 ```
 
-<Footer />
+

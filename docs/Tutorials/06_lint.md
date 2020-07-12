@@ -23,4 +23,4 @@ tags:
 [^1]: https://github.com/microsoft/vscode-python/issues/553
 [^2]: https://www.reddit.com/r/Python/comments/82hgzm/any_advantages_of_flake8_over_pylint/
 
-<Footer />
+

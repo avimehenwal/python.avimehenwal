@@ -10,11 +10,11 @@ tags:
 - decorators
 ---
 
-# 1. Advanced Python Concepts
+# :eyes: Advanced Python Concepts
 
 <TagLinks />
 
-## 1.1. Generators
+## :fire_engine: Generators
 
 Generators are used to create iterators, but with a different approach.
 Generators are simple functions which return an iterable set of items, one at a time, in a special way.
@@ -38,14 +38,14 @@ for random_number in lottery():
        print("And the next number is... %d!" %(random_number))
 ```
 
-### 1.1.1. Generator Expression
+### :ambulance: Generator Expression
 
 ```python
 >>> sum(i*i for i in range(10))                 # sum of squares
 285
 ```
 
-## 1.2. Iterators
+## :family_man_girl_girl: Iterators
 
 * `for` calls `iter()`, `__iter__()` which called `next()` and subsequently `__next__()`
 * Writing your own iterators?
@@ -78,7 +78,7 @@ p
 s
 ```
 
-## 1.3. [Closure]
+## :diamond_shape_with_a_dot_inside: [Closure]
 
 A [closure] is a function object that remembers values in enclosing scopes even if they are not present in memory.
 
@@ -87,27 +87,29 @@ It's very important to note that the nested functions can access the variables o
 However, at least in python, they are only readonly.
 :::
 
-## 1.4. Decorators
+## :crown: Decorators
 
 > Preprocessing/Postprocessing the arguments/returns to decorated function
 
 * Can add multiple decorators to a function
 * Decorators in Python are used to modify or inject code in functions or classes. Using decorators, you can wrap a class or function method call so that a piece of code can be executed before or after the execution of the original code. Decorators can be used to check for permissions, modify or track the arguments passed to a method, logging the calls to a specific method, etc.
 
-## 1.5. Coroutines
+## :carousel_horse: Coroutines
 
 Coroutines can be entered, exited, and resumed at many different points.
 They can be implemented with the `async def` statement.
 
-## 1.6. Memory Management
+## :memo: Memory Management
 
 Python does automatic memory management (reference counting for most objects and **garbage collection**
 to eliminate cycles). The memory is freed shortly after the last reference to it has been eliminated.
 
-## 1.7. GIL - Global Interpreted Lock
+Python memory is managed by Python **private heap space**. All Python objects and data structures are located in a private heap. The programmer does not have an access to this private heap and interpreter takes care of this Python private heap.
+
+## :lock: GIL - Global Interpreted Lock
 
 
-## 1.8. [Metaprogramming]
+## :computer: [Metaprogramming]
 
 > treat other programs as data
 
@@ -116,17 +118,19 @@ to eliminate cycles). The memory is freed shortly after the last reference to it
   * instance of a normal class is an bounded object in memory
 * https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python
 
-## 1.9. [Monkey Patching]
+## :monkey_face: [Monkey Patching]
 
 > What is monkey patching? How to use it in Python? Example? Is it ever a good idea?
 
-## Descriptors
+Default car doesnt have a harness to carry bicycles. We monkey patch it to a car.
+
+## :crossed_swords: Descriptors
 
 > used to describe something
 
 * https://docs.python.org/3/howto/descriptor.html
 
-## Good Questions
+## :smile: Good Questions
 
 *  Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really work in parallel? What about GIL?
    * [Why GIL still exists in CPython?](https://wiki.python.org/moin/GlobalInterpreterLock)
@@ -141,9 +145,12 @@ to eliminate cycles). The memory is freed shortly after the last reference to it
   * **1NF** remove all Multivalued (multiple phone nos) and Composite (Residence Address) date entries
     * by breaking/decomposing data into atomic values seperate tables
 * What are the wheels and eggs? What is the difference?
+* When to change version? Major | Minor version change
+  * When not backward compatible => Major change
+    * Example python 2 and python 3
 
 
-### 1.9.1. References
+## :selfie: References
 
 * [Parent pointer tree/ Spaghetti/cactus stack](https://en.wikipedia.org/wiki/Parent_pointer_tree)
 * [Python Grammer Specification](https://docs.python.org/3/reference/grammar.html)
@@ -155,4 +162,4 @@ to eliminate cycles). The memory is freed shortly after the last reference to it
 [Metaprogramming]: https://en.wikipedia.org/wiki/Metaprogramming
 [monkey patching]: https://en.wikipedia.org/wiki/Monkey_patch
 
-<Footer />
+
