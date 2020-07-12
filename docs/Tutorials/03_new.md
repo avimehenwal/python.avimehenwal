@@ -8,7 +8,7 @@ tags:
 - features
 ---
 
-# New Python Features
+# :new: New Python Features
 
 <TagLinks />
 

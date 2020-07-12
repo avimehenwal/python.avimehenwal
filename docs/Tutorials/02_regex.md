@@ -9,11 +9,11 @@ tags:
 - pattern
 ---
 
-# 1. Regular Expressions
+# :eye_speech_bubble: Regular Expressions
 
 <TagLinks />
 
-## 1.1. Vocabulary
+## :3rd_place_medal: Vocabulary
 
 * Qualifiers, Metacharacters, Metaclasses
 * RE works on characters
@@ -31,7 +31,7 @@ Pattern | Description
 `(?P<name>)` | named RE pattern
 `(?P=name)` | named RE pattern reference
 
-## 1.2. RE Repetition Qualifiers
+## :1st_place_medal: RE Repetition Qualifiers
 
 * Non-greedy varients (usually followed by `?`)
 
@@ -46,9 +46,32 @@ Greedy Qualifiers | Non-greedy varients
 (.*)    # 0..N Any charcter (except space) matching 0 to n number of times
 (.+)    # 1..N Match at least 1 to n number of times
 (.?)    # 0..1 Match either O or 1 number of time
-````
+```
 
-### IP pattern
+## :baby: Qualifiers
+
+The question mark character, ?, matches either once or zero times; you can think of it as marking something as being optional. For example, home-?brew matches either 'homebrew' or 'home-brew'.
+
+## :footprints: Metacharacters and Metacharacter Classes
+
+> Remember in duality
+
+Metacharacters
+
+* `.`, `?`, `*`
+* `^`, `$`
+* `[...]`, `(...)`, `{...}`
+* `(?:...)`, `(?=...)`, `(?!...)`, `(?<=...)`, `(?<!...)`, `(?P<name>...)`, `(?P=name...)`
+
+Metacharacter Classes
+
+* `\w`, `\W`
+* `\d`, `\D`
+* `\a`, `\A`
+* `\s`, `\S`
+
+
+## :four: IP pattern
 
 IP generation Rules
 
@@ -70,12 +93,12 @@ $                       # last character match followed by a space
 /^(?:(?P<octet>[0-9]{1,3})\.){3}(?P=octet)$/
 ```
 
-### 1.2.1. RegEx Assertions
+## :dress: RegEx Assertions
 
 Matching and returning the matches based on assertions either by looking forward in the blob or
 by looking backward
 
-#### 1.2.1.1. Positive Lookahead Assertion
+#### :fast_forward: Positive Lookahead Assertion
 
 Consider the case where use want to match **only** *Issac Asimov* and **not** *Issac Newton*
 
@@ -88,7 +111,7 @@ Issac Newton | :x:
 Issac (?=Asimov)
 ```
 
-#### 1.2.1.2. Negative Lookahead Assertion
+#### :rewind: Negative Lookahead Assertion
 
 Reverse the above situation, we want all other *Issacs* which are **not** followed by *Asimov*.
 We want *Issac* from *Issac Newton* this time.
@@ -102,7 +125,7 @@ Issac Newton | :heavy_check_mark: Issac
 Issac (?!Asimov)
 ```
 
-#### 1.2.1.3. Positive Lookbehind Assertion
+#### :next_track_button: Positive Lookbehind Assertion
 
 Blob | Pattrn Match return
 :------:|--------------
@@ -115,7 +138,7 @@ Consider we want *Mehenwal* **only** from *Avi Mehenwal* and **not** from *Shubh
 (?<=Avi) Mehenwal
 ```
 
-#### 1.2.1.4. Negative Lookbehind Assertion
+#### :previous_track_button: Negative Lookbehind Assertion
 
 Blob | Pattrn Match return
 :------:|--------------
@@ -129,7 +152,7 @@ We want *Mehenwal* from *Shubhranshu Mehenwal*
 (?<!Avi) Mehenwal
 ```
 
-## 1.3. Resources
+## :rosette: Resources
 
 * https://www.regular-expressions.info/refrepeat.html
 * [Test and explain your RE](https://regex101.com/)

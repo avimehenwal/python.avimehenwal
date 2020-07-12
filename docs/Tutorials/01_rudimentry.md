@@ -9,7 +9,7 @@ tags:
 - comprehension
 ---
 
-# 1. Strings
+# :prayer_beads: Strings
 
 <TagLinks />
 
@@ -17,7 +17,7 @@ tags:
 
 * zen of python
 
-## 1.1. General
+## :shield: General
 
 * immutable basic types (numbers, strings, tuples)
 * mutable objects such as lists, dictionaries, and most other types)
@@ -37,6 +37,15 @@ tags:
 Pickeling/Unpickeling
 : Pickling is converting an object to a string representation in python. Generally used for caching and transferring objects between hosts/processes. Python Objects => Strings
 
+```mermaid
+graph LR
+A(Object form)
+B(String form)
+
+A == Pickeling ==> B
+B == Unpickeling ==> A
+```
+
 Lambda Function
 : Lambda in Python is an anonymous function created at runtime. E.g.
 
@@ -45,7 +54,7 @@ Although, there is no formal rule on calling them `*args/**kwargs`,
 people tend to name them that way. When a function is declared `def my_func(*args, **kwargs)`,
 args is a **tuple** with all positional arguments passed to the function and kwargs is a
 with all keyword arguments. They can be named anything as long as the **unpack** operators `*` and `**` are used.
-* unpacks a tuple and ** unpacks a dict.
+So `*` unpacks a tuple and `**` unpacks a dict.
 :::
 
 **Introspection** is the ability to examine an object at runtime. Python has a `dir()` function that supports examining the attributes of an object, `type()` to check the object type, `isinstance()`, etc.
@@ -55,31 +64,31 @@ While introspection is passive examination of the objects, **reflection** is a m
 It can even invoke functions dynamically - getattr(my_obj, "my_func_name")()
 
 
-## 1.2. DataTypes
+## :flags: DataTypes
 
 * dictionaries
-  * It stores key-value pairs, where keys are unique and it has $O(1)$ **access time**.
+  * It stores key-value pairs, where keys are unique and it has **O(1)** access time.
   * The most important limitation for a dict is that the keys must be hashable/immutable. Meaning, we can use a tuple as a key, but not a list.
 
-## 1.3. String Formatting
+## String Formatting
 
 1. using C-style string formatting using `%`, old-style
 2. using Python `.format()`, new-style
 
-## 1.4. String Manipulation
+## String Manipulation
 
 Since strings are stored as an array of type `char` in memory, these could be manupulated using **list comprehensions**
 
 List comprehensions
 : which creates a new list based on another list, in a single, readable line.
 
-### 1.4.1. Types of comprehensions in Python
+### Types of comprehensions in Python
 
 Comprehensions in Python provide us with a short and concise way to construct new sequences (such as lists, set, dictionary etc.)
 
 ```mermaid
 graph LR
-A(Coprehensions):::orange --> B[List Comprehension]
+A(Pythonic Coprehensions):::orange --> B[List Comprehension]
 A --> C[Dictionary Comprehension]
 A --> D[Generator Comprehension]
 A --> E[Set Comprehension]
@@ -89,12 +98,12 @@ classDef orange fill:#f96;
 classDef purple fill:#f9f,stroke:#333,stroke-width:4px;
 ```
 
-## 1.5. Manupulation Techniques
+## Manupulation Techniques
 
 * Type checking using `is` or `instance` keyword
-* pickeling and [serialization]/Jsonify of string types
+* pickeling and [serialization]/Jsonify of string types. Sometimes also known as **marshalling** and unmarshalling
 
-## 1.6. Classes
+## :building_construction: Classes
 
 * old-style Classes
 * new-style classes
@@ -105,7 +114,7 @@ Objects have individuality, and multiple names (in multiple scopes) can be bound
 to the same object. This is known as aliasing in other languages.
 :::
 
-## 1.7. Scopes and Namespaces
+## :department_store: Scopes and Namespaces
 
 Namespace created by interpreter
 : is a mapping from names to objects. Most namespaces are currently implemented as Python dictionaries, but that’s normally not noticeable in any way (except for performance), and it may change in the future. It is like a box where a variable name is mapped to the object placed. Whenever the variable is searched out, this box will be searched, to get corresponding object.
@@ -130,12 +139,12 @@ Scope
   * [Diamond Relationship Problem](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem)
 * “Private” instance variables that cannot be accessed except from inside an object don’t exist in Python.
 
-## General Questions
+## :question: General Questions
 
 * Modules and Packages
   * modules for BI and module for GUI combined together to form a Packages
 
-### 1.7.1. References
+## :paperclip: References
 
 * https://pyformat.info/
 

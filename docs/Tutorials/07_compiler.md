@@ -28,27 +28,61 @@ classDef orange fill:#f96,stroke-width:0px;
 classDef purple fill:#f9f,stroke:#333,stroke-width:0px;
 ```
 
+* Programming is mainly writing correct code for compilers. If you can program in a language means you know how to write instructions for a specific compiler.
+* Programming languages differ widely because their compilers are written so.
+
 ## :palm_tree: Types of Compilers
 
-1. Cross - compiler
-   1. compiler for different CPU Architecture
-   2. on x86 compiling code for ARM Architecture
+Cross-Compiler
+:   compiles code for a target platform(CPU architecture)
+
+    ```mermaid
+    graph LR
+    A(Host architecture x86)
+    B(Target architecure ARM)
+
+    A -- CrossCompilation --> B
+    ```
+    1. compiler for different CPU Architecture
+    2. on x86 compiling code for ARM Architecture
+
 
 Assembler
-: Translate code to assembly languages
+:   Translate code to assembly languages
 
 Transpiler - S2S compiler
-: compiles code from one version to another. Eg: **Babel** in JS world
+:   compiles code from one version to another. Eg: ==Babel== in JS world
+
+    **Eg:** From modern ES2015 to ES5 to support older browsers
+
+    ```mermaid
+    graph LR
+    A(modern ES-2015)
+    B(old ES-5)
+
+    A -- Transpile --> B
+    ```
 
 Decompiler
-: compiles from a Low Level Language to High Level Language
+:   compiles from a Low Level Language to High Level Language
+
+    ```mermaid
+    graph LR
+    A(Low level Language):::green
+    B(High Level Language):::orange
+
+    A -- Decompiler --> B
+    ```
 
 Bytecode Compiler
-: JAV, Python VM
+:   JAV, Python VM
+
 
 JIT - Just in time Compilers
 
-Self Compiled - compiled by itself
+[Bootstrapped Compilers](https://en.wikipedia.org/wiki/Bootstrapping_(compilers))
+:   Self Compiled - compiled by itself
+
 
 ## :paintbrush: Compiler Design
 
@@ -196,6 +230,11 @@ flowchart LR
 FrontEnd --> MiddleEnd
 MiddleEnd --> BackEnd
 ```
+
+### How compilers are used?
+
+Compiler interface usually have a CLI interface. Works just like another CLI tool so as to speak.
+Take examples of python, node, rust, java, bash, zsh compilers.
 
 ## :cyclone: Resources
 
