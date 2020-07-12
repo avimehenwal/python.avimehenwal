@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "Python documents",
   "main": "index.js",
-  "repository": "https://github.com/avimehenwal/python.avimehenwal",
+  "repository": "git@github.com:avimehenwal/python.avimehenwal.git",
   "author": "avimehenwal",
   "license": "MIT",
   "scripts": {
@@ -32,6 +32,7 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "mermaid": "^8.5.1",
+    "semantic-release": "^17.1.1",
     "toml": "^3.0.0",
     "vuepress": "^1.5.0",
     "vuepress-plugin-auto-sidebar": "^1.5.0",
