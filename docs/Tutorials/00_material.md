@@ -28,3 +28,16 @@ tags:
 * https://github.com/MaximAbramchuck/awesome-interview-questions
 
 
+```mermaid
+stateDiagram-v2
+    Still :  Still moving description
+    note left of Still : This is the note to the left.
+
+    [*] --> Still
+    Still --> [*]
+
+    Still --> Moving
+    Moving --> Still
+    Moving --> Crash : A transition
+    Crash --> [*]
+```

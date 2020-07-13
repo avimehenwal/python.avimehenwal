@@ -4,6 +4,8 @@ tags:
 - compiler
 - translator
 - interpretor
+- grammer
+- parser
 ---
 
 # :hammer_and_wrench: Compiler
@@ -155,6 +157,52 @@ Scanning is performed using
 * RegEx Languages and
 * **FSM** Finite State Automata Schemes
 :::
+
+* [BNF](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form), [EBNF](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form)
+  * Intended for consumption by humans
+  * [BNF Python](https://docs.python.org/3/reference/introduction.html#notation)
+* [Python Lexical Analysis](https://docs.python.org/3/reference/lexical_analysis.html)
+* [Full Python Grammer](https://docs.python.org/3/reference/grammar.html)
+* [Difference b/w regular grammer and Context free grammer](https://stackoverflow.com/questions/559763/regular-vs-context-free-grammars)
+* [How to write grammer for a programming language](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form)
+* [Chomsky hierarchy of grammer](https://en.wikipedia.org/wiki/Chomsky_hierarchy)
+* [Allison Parrish](https://www.decontextualize.com/)
+* [Grammer Parsing Engines](https://en.wikipedia.org/wiki/Comparison_of_parser_generators)
+  * [Tracery for JS](https://github.com/galaxykate/tracery/tree/tracery2)
+
+```mermaid
+stateDiagram-v2
+A : Lexical Analysis / Tokenizer
+
+state Tokenization Lexical Analysis {
+    [*] --> A : Canonicalized Code
+    A --> [*] : tokens
+}
+```
+
+[Grammer](http://matt.might.net/articles/grammars-bnf-ebnf/)
+:   Language of languages
+
+CFG - Context Free Grammer
+:   Every [production rules] of the form $A \implies \alpha$
+
+    4-tuple ${\displaystyle G=( V,\Sigma ,R,S )}$
+
+    where,
+
+    1. ${\displaystyle v\in V}v\in V$ is called a nonterminal character or a variable
+    2. $\Sigma$ is a finite set of terminals,
+    3. $R$ is a finite relation from $V$ to ${\displaystyle (V\cup \Sigma )^{*}}(V\cup \Sigma )^{*}$
+    4. $S$ start variable
+
+    $A$ : single non terminal symbol
+    $\alpha$ : string of terminal/non-terminal symbols
+
+    * [Terminal / Non-Terminal Symbols](https://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols)
+    * [How to write CFG for a language?](https://youtu.be/nyjB5xW0tQc)
+    * [Language for writing compilers?](https://en.wikipedia.org/wiki/Compiler_Description_Language)
+
+[production rules]: https://en.wikipedia.org/wiki/Production_(computer_science)
 
 ### :evergreen_tree: Parsing / Syntax Analysis
 
