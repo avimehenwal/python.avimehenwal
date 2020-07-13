@@ -60,6 +60,15 @@ module.exports = {
         axisFormat:'%Y-%m-%d',
       }
     }],
+    [
+      'vuepress-plugin-mathjax',
+      {
+        target: 'svg',
+        macros: {
+          '*': '\\times',
+        },
+      },
+    ],
     [ '@vuepress/google-analytics', { 'ga': process.env.GA } ],
   ],
   markdown: {
