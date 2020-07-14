@@ -6,6 +6,7 @@ tags:
 - interpretor
 - grammer
 - parser
+- lexer
 ---
 
 # :hammer_and_wrench: Compiler
@@ -283,6 +284,27 @@ MiddleEnd --> BackEnd
 
 Compiler interface usually have a CLI interface. Works just like another CLI tool so as to speak.
 Take examples of python, node, rust, java, bash, zsh compilers.
+
+## :computer: Softwares
+
+* [Compiler-compiler softwares](https://en.wikipedia.org/wiki/Compiler-compiler)
+  * [YACC](https://en.wikipedia.org/wiki/Yacc)
+  * [GNU Bison](https://en.wikipedia.org/wiki/GNU_Bison)
+    * [documentation](https://www.gnu.org/software/bison/manual/html_node/index.html#SEC_Contents)
+    * Generates a parser in `C`, `C++`, or `java`
+    * Perl 5
+    * GNU OCtave
+    * MySQL, PostgresSQL
+    * Bash
+    * Go - initiall then shifted to their own custom tool
+    * PHP, Ruby
+* [ANTLR](https://www.antlr.org/)
+
+### Lex/Flex
+
+* `filename.l`
+* 4 sections
+* commenting is not allowed
 
 ## :cyclone: Resources
 
