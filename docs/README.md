@@ -2,6 +2,14 @@
 
 ![Python programming logo](/logo.svg)
 
+::: tip Science and Engineering
+
+> Try to do good science rather than popular science.
+
+Liberral Education
+:   Learn something about everything and everything about something.
+:::
+
 ## 1.1. Pythonic
 
 - All generators are iterators BUT not all iterators are generators

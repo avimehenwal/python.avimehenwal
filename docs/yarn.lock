@@ -11219,7 +11219,7 @@ vuepress-plugin-auto-sidebar@^1.5.0:
   dependencies:
     colors "^1.4.0"
 
-vuepress-plugin-container@^2.0.2:
+vuepress-plugin-container@^2.0.2, vuepress-plugin-container@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-container/-/vuepress-plugin-container-2.1.4.tgz#bd586587ffb303f847e4a6a2e2568171f311493b"
   integrity sha512-l+EkeL+rC6DJch1wAZUFIkNDaz2TNOg4NQTHa3yMAsYkC+QaSRubGdN6YwOSmfjxVmM9s9D3gwBWw0O7OBhqRg==
@@ -11245,6 +11245,13 @@ vuepress-plugin-feed@^0.1.8:
     lodash.trimstart "^4.5.1"
     remove-markdown "0.3.0"
     striptags "3.1.1"
+
+vuepress-plugin-git-log@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-git-log/-/vuepress-plugin-git-log-1.0.1.tgz#22a6053ac2a2c9a8b5e9b5c4b08dcaa6dbf1d3f2"
+  integrity sha512-oVUfHdfvP0e7JBRIgwJ/Kmxj1AO+JJyTEsNRnBRw7YBlIfJIIC/zcGFidupsw6LSr1+UTHdGqn2vlYr8Ade6Fw==
+  dependencies:
+    cross-spawn "^6.0.5"
 
 vuepress-plugin-mailchimp@^1.4.1:
   version "1.4.2"
