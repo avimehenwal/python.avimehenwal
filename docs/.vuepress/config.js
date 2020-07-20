@@ -60,7 +60,41 @@ module.exports = {
         axisFormat:'%Y-%m-%d',
       }
     }],
+    [
+      'vuepress-plugin-mathjax',
+      {
+        target: 'svg',
+        macros: {
+          '*': '\\times',
+        },
+      },
+    ],
+    [ 'vuepress-plugin-git-log' ],
     [ '@vuepress/google-analytics', { 'ga': process.env.GA } ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'right',
+        defaultTitle: '',
+      },
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'theorem',
+        before: info => `<div class="theorem"><p class="title">${info}</p>`,
+        after: '</div>',
+      },
+    ],
+    [ // DOESNT WORK, want to put title(author name) after main content
+      'vuepress-plugin-container',
+      {
+        type: 'quote',
+        defaultTitle: 'Anonymous',
+        before: info => `<div class="quote"><p class="title">${info}</p>`,
+        after: info => `${info}</div>`,
+      },
+    ]
   ],
   markdown: {
     // options for markdown-it-anchor

@@ -3,17 +3,15 @@
   "version": "1.1.1",
   "description": "Python documents",
   "main": "index.js",
-  "repository": "https://github.com/avimehenwal/python.avimehenwal",
+  "repository": "git@github.com:avimehenwal/python.avimehenwal.git",
   "author": "avimehenwal",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev",
+    "dev": "vuepress dev",
     "docs:build": "vuepress build",
     "cl": "standard-version --dry-run"
   },
-  "dependencies": {
-    "remove": "^0.1.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.1.2",
     "@vuepress/plugin-back-to-top": "^1.5.2",
@@ -32,9 +30,13 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "mermaid": "^8.5.1",
+    "semantic-release": "^17.1.1",
     "toml": "^3.0.0",
     "vuepress": "^1.5.0",
     "vuepress-plugin-auto-sidebar": "^1.5.0",
+    "vuepress-plugin-container": "^2.1.4",
+    "vuepress-plugin-git-log": "^1.0.1",
+    "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-mermaidjs": "^1.5.1"
   }
 }

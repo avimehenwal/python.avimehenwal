@@ -16,7 +16,9 @@
         "vue",
         "netlify",
         "component",
-        "node"
+        "node",
+        "markdown",
+        "git"
     ],
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
