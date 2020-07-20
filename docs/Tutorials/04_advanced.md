@@ -151,6 +151,17 @@ Default car doesnt have a harness to carry bicycles. We monkey patch it to a car
   * When not backward compatible => Major change
     * Example python 2 and python 3
 
+## :1234: Types
+
+[Types in > python 3.5](https://docs.python.org/3/library/typing.html)
+
+```py
+def infinite_stream(start: int) -> Generator[int, None, None]:
+    while True:
+        yield start
+        start += 1
+```
+
 
 ## :selfie: References
 
