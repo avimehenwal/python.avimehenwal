@@ -4,5 +4,11 @@ set TFILES (git ls | wc --lines)
 set RSIZE (du --human-readable --summarize | awk '{print $1}')
 set BRANCH (git branch --show-current)
 
-# echo "#Tracked Files= $TFILES Repository Size= $RSIZE" >> $1
-echo "$BRANCH #TrackedFiles=$TFILES RepositorySize=$RSIZE "
+if [ (git diff --staged --name-only | grep py | wc --lines) -ne 0 ]
+	set SCORE (git diff --staged --name-only | grep py | xargs pylint | grep "Your code has been rated")
+end
+
+# echo "$TFILES Files | $RSIZE | $BRANCH" >> $1
+echo -e "$TFILES Files | $RSIZE | $BRANCH \n $SCORE" >> $1
+
+# END

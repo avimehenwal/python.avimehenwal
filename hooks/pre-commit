@@ -11,10 +11,10 @@ echo -e "Report staged changes"
 git diff --stat --staged
 
 # Run lint only on committed python files
-if [[ $(git diff --staged --name-only | grep py | wc --lines) -ne 0 ]]
-then
-	git diff --staged --name-only | grep py | xargs pylint
-fi
+# if [[ $(git diff --staged --name-only | grep py | wc --lines) -ne 0 ]]
+# then
+# 	git diff --staged --name-only | grep py | xargs pylint
+# fi
 
 # [ ] - Add pylint score with commit message?
 # pylint src/hidden_features.py | grep --only-matching -P " \w+\.\w+/\w+ "
