@@ -4,6 +4,9 @@ tags:
 - compiler
 - translator
 - interpretor
+- grammer
+- parser
+- lexer
 ---
 
 # :hammer_and_wrench: Compiler
@@ -156,6 +159,102 @@ Scanning is performed using
 * **FSM** Finite State Automata Schemes
 :::
 
+* [BNF](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form), [EBNF](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form)
+  * Intended for consumption by humans
+  * [BNF Python](https://docs.python.org/3/reference/introduction.html#notation)
+* [Python Lexical Analysis](https://docs.python.org/3/reference/lexical_analysis.html)
+* [Full Python Grammer](https://docs.python.org/3/reference/grammar.html)
+* [Difference b/w regular grammer and Context free grammer](https://stackoverflow.com/questions/559763/regular-vs-context-free-grammars)
+* [How to write grammer for a programming language](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form)
+* [Chomsky hierarchy of grammer](https://en.wikipedia.org/wiki/Chomsky_hierarchy)
+* [Allison Parrish](https://www.decontextualize.com/)
+* [Grammer Parsing Engines](https://en.wikipedia.org/wiki/Comparison_of_parser_generators)
+  * [Tracery for JS](https://github.com/galaxykate/tracery/tree/tracery2)
+
+```mermaid
+stateDiagram-v2
+A : Lexical Analysis / Tokenizer
+
+state Tokenization Lexical Analysis {
+    [*] --> A : Canonicalized Code
+    A --> [*] : tokens
+}
+```
+
+[Grammer](http://matt.might.net/articles/grammars-bnf-ebnf/)
+:   Language of languages, [Chomsky Hierarchy](https://en.wikipedia.org/wiki/Chomsky_hierarchy)
+
+[CFG](https://en.wikipedia.org/wiki/Context-free_grammar) - Context Free Grammer
+:   Every [production rules] of the form $A \rightarrow \alpha$
+
+    where,
+
+    $A$ is **non-terminal** and $\alpha$ is **terminal** character
+
+    4-tuple ${\displaystyle G=( V,\Sigma ,R,S )}$
+
+    where,
+
+    1. ${\displaystyle v\in V}v\in V$ is called a nonterminal character or a variable
+    2. $\Sigma$ is a finite set of terminals,
+    3. $R$ is a finite relation from $V$ to ${\displaystyle (V\cup \Sigma )^{*}}(V\cup \Sigma )^{*}$
+    4. $S$ start variable
+
+    * [Terminal / Non-Terminal Symbols](https://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols)
+    * [How to write CFG for a language?](https://youtu.be/nyjB5xW0tQc)
+    * [Language for writing compilers?](https://en.wikipedia.org/wiki/Compiler_Description_Language)
+
+[production rules]: https://en.wikipedia.org/wiki/Production_(computer_science)
+
+[CSG](https://en.wikipedia.org/wiki/Context-sensitive_grammar) - Context Sensitive Grammar
+:   more general than CFG
+
+    A formal grammar :triangular_ruler: $G = (N, \Sigma, P, S)$
+
+    Notation | Meaning
+    :-------:|:-----------
+    $N$       | is a set of nonterminal symbols
+    $\sigma$  | is a set of terminal symbols
+    $P$       | is a set of production rules, and
+    $S$       | is the start symbol
+
+    is context-sensitive if all rules in $P$ are of the form
+
+    ::: tip CSG formal definition
+    $\alpha A \beta \rightarrow \alpha \gamma \beta$
+
+    where,
+
+    1. :point_right:   $A \in N$
+    2. :point_right:   $\alpha , \beta \in ( N \cup \Sigma)\ast$ and
+    3. :point_right:   $\gamma \in ( N \cup \Sigma)+$
+    :::
+
+
+
+##  :de: Grammar
+
+```mermaid
+graph TD
+  subgraph Recursively Enumerable - Turing Machine - Tupe-0
+    subgraph Context Sensitive - Linear-bounded non-deterministic Turing machine - Type-1
+       subgraph Context Free Grammer - Push down automata - Type-2
+         subgraph Regular Grammer - FSA - Type-3
+         end
+       end
+    end
+  end
+```
+
+Formal Grammer
+:   Finite set of production Rules
+
+    Examples, write grammer to match all a, aa, aaaa, aaaaaaa
+
+    1. $S \rightarrow S$
+    2. $S \rightarrow aS$
+
+
 ### :evergreen_tree: Parsing / Syntax Analysis
 
 > crucial stage in Process
@@ -235,6 +334,52 @@ MiddleEnd --> BackEnd
 
 Compiler interface usually have a CLI interface. Works just like another CLI tool so as to speak.
 Take examples of python, node, rust, java, bash, zsh compilers.
+
+## :cow: Parser Generators
+
+* [Compiler-compiler softwares](https://en.wikipedia.org/wiki/Compiler-compiler)
+  * [YACC](https://en.wikipedia.org/wiki/Yacc)
+  * [GNU Bison](https://en.wikipedia.org/wiki/GNU_Bison)
+    * [documentation](https://www.gnu.org/software/bison/manual/html_node/index.html#SEC_Contents)
+    * Generates a parser in `C`, `C++`, or `java`
+    * Perl 5
+    * GNU OCtave
+    * MySQL, PostgresSQL
+    * Bash
+    * Go - initiall then shifted to their own custom tool
+    * PHP, Ruby
+* [ANTLR](https://www.antlr.org/)
+* [CPython uses ASDL](https://stackoverflow.com/questions/10748648/what-parser-generator-does-cpython-use)
+
+```mermaid
+stateDiagram-v2
+A : GNU Bison
+
+state General_Purpose_Parser_Generator {
+    [*] --> A : Annotated  context free grammer
+    A --> [*] : deterministic LR / GLR
+}
+```
+
+* Can generate parser from calculator to complex language
+* `filename.l`
+* 4 sections
+* commenting is not allowed
+
+Bison Input Grammer File structure
+
+```
+%{
+Prologue
+%}
+
+Bison declarations
+
+%%
+Grammar rules
+%%
+Epilogue
+```
 
 ## :cyclone: Resources
 

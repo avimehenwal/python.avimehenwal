@@ -40,6 +40,8 @@ for random_number in lottery():
 
 ### :ambulance: Generator Expression
 
+Some simple generators can be coded succinctly as expressions using a syntax similar to list comprehensions but with parentheses instead of square brackets.
+
 ```python
 >>> sum(i*i for i in range(10))                 # sum of squares
 285

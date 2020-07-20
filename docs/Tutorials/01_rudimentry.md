@@ -13,7 +13,7 @@ tags:
 
 <TagLinks />
 
-> batteries included” philosophy
+> batteries included philosophy
 
 * zen of python
 
@@ -33,6 +33,7 @@ tags:
   * [call by assignment](https://docs.python.org/3/faq/programming.html#how-do-i-write-a-function-with-output-parameters-call-by-reference)
   * call by references, howto in python?
   * call by value
+* Python reads program text as [Unicode code points](https://en.wikipedia.org/wiki/UTF-8)
 
 Pickeling/Unpickeling
 : Pickling is converting an object to a string representation in python. Generally used for caching and transferring objects between hosts/processes. Python Objects => Strings
@@ -66,7 +67,69 @@ It can even invoke functions dynamically - getattr(my_obj, "my_func_name")()
 
 ## :flags: DataTypes
 
-* dictionaries
+> Deals with memory-space management and how garbage collection will work
+
+* [Python Data Model](https://docs.python.org/3/reference/datamodel.html)
+
+Python Primitive Data Types
+:   Basic Building blocks
+
+    1. Integer
+    2. Float
+    3. Strings
+    4. Boolean
+    5. Bytes
+
+Python compound / [composite] Data Structures
+:   built using primitive data types for ease of use in programming
+    1. Arrays | Lists | Tuples
+    2. Dictionary
+    3. Sets
+    4. **Files**
+       * `open()`
+       * `readline()`
+       * `close()`
+       * `read()`
+       * `write()`
+
+```mermaid
+graph TB
+  subgraph Language Data Types
+    subgraph Composite Data Type
+       subgraph Primitive Data Type
+       end
+    end
+  end
+```
+
+Bytes
+:   A bytes object is an immutable array.
+
+    * The items are **8-bit** bytes, represented by integers in the range `0 <= x < 256`.
+    * Bytes literals (like b'abc') and the built-in bytes() constructor can be used to create bytes objects.
+    * Also, bytes objects can be decoded to strings via the decode() method.
+
+
+### Lists
+
+> Lists (known as arrays in other languages)
+
+* [composite] / compund data structure
+  * built using primitive data types
+* Slicing operations
+* Indexed
+* List Manipulation
+
+Shallow Copy
+:   [shallow copy](https://en.wikipedia.org/wiki/Object_copying) of the list. Equivalent to `a[:]`
+
+    ```py
+    list.copy()
+    ```
+![Python list indexing ans slicing](https://railsware.com/blog/wp-content/uploads/2018/10/first-slice.png)
+
+### dictionaries
+
   * It stores key-value pairs, where keys are unique and it has **O(1)** access time.
   * The most important limitation for a dict is that the keys must be hashable/immutable. Meaning, we can use a tuple as a key, but not a list.
 
@@ -80,7 +143,11 @@ It can even invoke functions dynamically - getattr(my_obj, "my_func_name")()
 Since strings are stored as an array of type `char` in memory, these could be manupulated using **list comprehensions**
 
 List comprehensions
-: which creates a new list based on another list, in a single, readable line.
+:   which creates a new list based on another list, in a single, readable line.
+    ```py
+    some_list = [1, 2, 'avi', 'mehenwal']
+    print([ type(item) for item in some_list ])
+    ```
 
 ### Types of comprehensions in Python
 
@@ -102,6 +169,62 @@ classDef purple fill:#f9f,stroke:#333,stroke-width:4px;
 
 * Type checking using `is` or `instance` keyword
 * pickeling and [serialization]/Jsonify of string types. Sometimes also known as **marshalling** and unmarshalling
+
+## Packages and Modules
+
+Modules for [Modular Programming](https://en.wikipedia.org/wiki/Modular_programming)
+:   definitions from a module can be imported into other modules or into the main module
+
+    * Executing modules as scripts
+    * views on using `import *`. Are there any dramatic performance changes?
+    * Modules search path
+    * compiler version of modules saved in `__pycache__` directory
+    * `dir()`
+
+Packages
+:   collection of modules
+
+    * structuring python module namespace by using dotted module names
+    * Packages support one more special attribute, `__path__`. This is initialized to be a list containing the name of the directory holding the package’s __init__.py before the code in that file is executed.
+    * `__init__.py` will treat the directory it is in as a loadable module.
+
+
+### Operator Overloading
+
+```py
+class person:
+    def __init__(self):
+        self.__name=''
+    @property
+    def name(self):
+        return self.__name
+    @name.setter
+    def name(self, value):
+        self.__name=value
+    @name.deleter
+    def name(self, value):
+        print('Deleting..')
+        del self.__name
+```
+
+The above person class includes two methods with the same name `name()`, but with a different number of parameters. This is called method overloading.
+
+## Exceptions Handling
+
+The try … except statement has an optional `else` clause, which, when present, must follow all except clauses. [It is useful for code that must be executed if the try clause does not raise an exception.](https://stackoverflow.com/questions/855759/python-try-else)
+
+```py
+try:
+    raise ExcetionName
+except ExcetionName:
+    pass
+    $ multiple exceptions
+else:
+    # we don't want to catch the ExcetionName exception if it's raised
+    another_operation_that_can_throw_ioerror()
+finally:
+    print('Runs under all circumstances')
+```
 
 ## :building_construction: Classes
 
@@ -139,10 +262,39 @@ Scope
   * [Diamond Relationship Problem](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem)
 * “Private” instance variables that cannot be accessed except from inside an object don’t exist in Python.
 
+## Standard Library Interfaces
+
+Function | Library name
+---------|--------------
+File System | `os`, `shutil`, `glob`, `datetime`
+i/p, o/p, error streams and CLI args | `sys`
+Pattern Matching | `re`
+Mathematics | `math`, `random`, `statistics`
+Internet and Web | `urllib`
+Data Compression | `gzip`, `bz2`
+Performance Measurement | `timeit`, `pstats`, `profile`
+Quality Control | `doctest`, `unittest`
+Threading | `multithreading`,
+
 ## :question: General Questions
 
 * Modules and Packages
   * modules for BI and module for GUI combined together to form a Packages
+
+What is the difference between `'` and `"` quotes in python?
+:   As far as language syntax is concerned, there is no difference in single or double quoted string.
+
+    However, if either single or double quote is a part of the string itself,
+    then the string must be placed in double or single quotes respectively.
+
+    ```py
+    str1='Hello "Python"'
+    ```
+
+Difference between `/`, `//` and `%`?
+:   `/` classical division return a **float**
+
+    `//` Floor division return an **int**
 
 ## :paperclip: References
 
@@ -150,6 +302,7 @@ Scope
 
 
 [serialization]: https://en.wikipedia.org/wiki/Serialization
-
+[composite]: https://en.wikipedia.org/wiki/Composite_data_type
+[ast]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
 
 

@@ -17,3 +17,6 @@ docs/yarn-error.log
 
 # root
 node_modules/
+
+# Custom
+MESSAGE.md

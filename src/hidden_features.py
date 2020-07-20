@@ -5,7 +5,7 @@ FileName   hidden_features.py
 Author     avimehenwal
 Created    Sun Mar 27 09:52:24 IST 2016
 
-some cool and interesting stuff with python
+Some cool and interesting stuff with python
 
 
 try:

@@ -7,13 +7,11 @@
   "author": "avimehenwal",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev",
+    "dev": "vuepress dev",
     "docs:build": "vuepress build",
     "cl": "standard-version --dry-run"
   },
-  "dependencies": {
-    "remove": "^0.1.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.1.2",
     "@vuepress/plugin-back-to-top": "^1.5.2",
@@ -36,6 +34,9 @@
     "toml": "^3.0.0",
     "vuepress": "^1.5.0",
     "vuepress-plugin-auto-sidebar": "^1.5.0",
+    "vuepress-plugin-container": "^2.1.4",
+    "vuepress-plugin-git-log": "^1.0.1",
+    "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-mermaidjs": "^1.5.1"
   }
 }
