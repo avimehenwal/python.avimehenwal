@@ -14,7 +14,11 @@ tags:
 * Most opensource porjects use flake8[^2]
 * Pylint appears to be significantly more popular. Performance-wise flake8 seems to be faster but there is not much difference on small files and projects and on large projects one would probably use pylint anyway since it provides deeper analysis.[^1]
 
+## Pylint
 
+1. Type Checker
+2. Code Style Checker
+3. Structural Analyzer
 
 [flake8]: https://gitlab.com/pycqa/flake8
 

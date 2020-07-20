@@ -186,6 +186,28 @@ Packages
 
     * structuring python module namespace by using dotted module names
     * Packages support one more special attribute, `__path__`. This is initialized to be a list containing the name of the directory holding the package’s __init__.py before the code in that file is executed.
+    * `__init__.py` will treat the directory it is in as a loadable module.
+
+
+### Operator Overloading
+
+```py
+class person:
+    def __init__(self):
+        self.__name=''
+    @property
+    def name(self):
+        return self.__name
+    @name.setter
+    def name(self, value):
+        self.__name=value
+    @name.deleter
+    def name(self, value):
+        print('Deleting..')
+        del self.__name
+```
+
+The above person class includes two methods with the same name `name()`, but with a different number of parameters. This is called method overloading.
 
 ## Exceptions Handling
 
