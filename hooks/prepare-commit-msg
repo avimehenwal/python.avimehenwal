@@ -3,14 +3,13 @@
 TFILES=$(git ls | wc --lines)
 RSIZE=$(du --human-readable --summarize | awk '{print $1}')
 BRANCH=$(git branch --show-current)
+SUMMARY=$(git diff --staged --shortstat)
 
 if [ $(git diff --staged --name-only | grep py | wc --lines) -ne 0 ]
 then
     SCORE=$(git diff --staged --name-only | grep py | xargs pylint | grep "Your code has been rated")
 fi
 
-# echo "$TFILES Files | $RSIZE | $BRANCH" >> $1
-echo -e "$TFILES Files | $RSIZE | $BRANCH \n $SCORE" >> $1
-
+echo -e "$TFILES Files | $RSIZE | $BRANCH |$SUMMARY \n $SCORE" >> $1
 
 # END
