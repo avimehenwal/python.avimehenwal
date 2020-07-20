@@ -10,6 +10,6 @@ then
     SCORE=$(git diff --staged --name-only | grep py | xargs pylint | grep "Your code has been rated")
 fi
 
-echo -e "$TFILES Files | $RSIZE | $BRANCH |$SUMMARY \n $SCORE" >> $1
+echo -e "\n$TFILES Files | $RSIZE | $BRANCH |$SUMMARY \n $SCORE" >> $1
 
 # END

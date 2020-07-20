@@ -1,8 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
+echo "[post-commit hook] Commit done!"
+
 # git-pylint-commit-hook --pylintrc .pylintrc --pylint-params ./src/*.py
 # https://stackoverflow.com/a/52287560/1915935
 # https://github.com/systemseed/falcon/blob/997033b2129a0e8be67d2ec81352e603ee9f88ac/.git-hooks/commit-msg
 
+# Read user input, assign stdin to keyboard
+exec < /dev/tty
 
 echo -e "Report unstages changes"
 git diff --stat
@@ -10,11 +15,12 @@ git diff --stat
 echo -e "Report staged changes"
 git diff --stat --staged
 
-# Run lint only on committed python files
-# if [[ $(git diff --staged --name-only | grep py | wc --lines) -ne 0 ]]
-# then
-# 	git diff --staged --name-only | grep py | xargs pylint
-# fi
+echo -e "Spellcheck on markdown files"
+# Run lint only on committed markdown files
+if [[ $(git diff --staged --name-only | grep "md$" | wc --lines) -ne 0 ]]
+then
+	git diff --staged --name-only | grep "md$" | xargs hunspell || true
+fi
 
 # [ ] - Add pylint score with commit message?
 # pylint src/hidden_features.py | grep --only-matching -P " \w+\.\w+/\w+ "

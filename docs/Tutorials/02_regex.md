@@ -15,7 +15,7 @@ tags:
 
 ## :3rd_place_medal: Vocabulary
 
-* Qualifiers, Metacharacters, Metaclasses
+* Qualifiers, Meta-characters, Meta-classes
 * RE works on characters
   * `[0-9]` valid
   * `[0-255]` will get translated to `[0-2]`
@@ -24,18 +24,18 @@ tags:
 Pattern | Description
 --------|-------------
 `(?:...` | non returning grouping, non capturing version
-`(?=...)` | Positive Loohahead Assertion
-`(?!...)` | Negative Lookahead Assertion
-`(?<=...)` | Positive Lookbehind Assertion
-`(?<!...)` | Negative Lookbehind Assertion
+`(?=...)` | Positive Look ahead Assertion
+`(?!...)` | Negative Look ahead Assertion
+`(?<=...)` | Positive Look behind Assertion
+`(?<!...)` | Negative Look behind Assertion
 `(?P<name>)` | named RE pattern
 `(?P=name)` | named RE pattern reference
 
 ## :1st_place_medal: RE Repetition Qualifiers
 
-* Non-greedy varients (usually followed by `?`)
+* Non-greedy variants (usually followed by `?`)
 
-Greedy Qualifiers | Non-greedy varients
+Greedy Qualifiers | Non-greedy variants
 ------------------|---------------------
 `ab*` | `*?`
 `ab+` | `+?`
@@ -43,7 +43,7 @@ Greedy Qualifiers | Non-greedy varients
 `a{6}` | `a{3,5}?`
 
 ```py
-(.*)    # 0..N Any charcter (except space) matching 0 to n number of times
+(.*)    # 0..N Any charter (except space) matching 0 to n number of times
 (.+)    # 1..N Match at least 1 to n number of times
 (.?)    # 0..1 Match either O or 1 number of time
 ```
@@ -52,18 +52,18 @@ Greedy Qualifiers | Non-greedy varients
 
 The question mark character, ?, matches either once or zero times; you can think of it as marking something as being optional. For example, home-?brew matches either 'homebrew' or 'home-brew'.
 
-## :footprints: Metacharacters and Metacharacter Classes
+## :footprints: Meta-characters and Meta-character Classes
 
 > Remember in duality
 
-Metacharacters
+Meta-characters
 
 * `.`, `?`, `*`
 * `^`, `$`
 * `[...]`, `(...)`, `{...}`
 * `(?:...)`, `(?=...)`, `(?!...)`, `(?<=...)`, `(?<!...)`, `(?P<name>...)`, `(?P=name...)`
 
-Metacharacter Classes
+Meta-character Classes
 
 * `\w`, `\W`
 * `\d`, `\D`
@@ -93,12 +93,12 @@ $                       # last character match followed by a space
 /^(?:(?P<octet>[0-9]{1,3})\.){3}(?P=octet)$/
 ```
 
-## :dress: RegEx Assertions
+## :dress: Regex Assertions
 
 Matching and returning the matches based on assertions either by looking forward in the blob or
 by looking backward
 
-#### :fast_forward: Positive Lookahead Assertion
+#### :fast_forward: Positive Look ahead Assertion
 
 Consider the case where use want to match **only** *Issac Asimov* and **not** *Issac Newton*
 
@@ -111,7 +111,7 @@ Issac Newton | :x:
 Issac (?=Asimov)
 ```
 
-#### :rewind: Negative Lookahead Assertion
+#### :rewind: Negative Look ahead Assertion
 
 Reverse the above situation, we want all other *Issacs* which are **not** followed by *Asimov*.
 We want *Issac* from *Issac Newton* this time.
@@ -125,9 +125,9 @@ Issac Newton | :heavy_check_mark: Issac
 Issac (?!Asimov)
 ```
 
-#### :next_track_button: Positive Lookbehind Assertion
+#### :next_track_button: Positive Look behind Assertion
 
-Blob | Pattrn Match return
+Blob | Patton Match return
 :------:|--------------
 Avi Mehenwal | :ballot_box_with_check:
 Shubhranshu Mehenwal | :x:
@@ -138,14 +138,14 @@ Consider we want *Mehenwal* **only** from *Avi Mehenwal* and **not** from *Shubh
 (?<=Avi) Mehenwal
 ```
 
-#### :previous_track_button: Negative Lookbehind Assertion
+#### :previous_track_button: Negative Look behind Assertion
 
-Blob | Pattrn Match return
+Blob | Pattern Match return
 :------:|--------------
 Avi Mehenwal | :x:
 Shubhranshu Mehenwal | :ballot_box_with_check:
 
-Now lets reverse the situation, we want all *Mehenwal* which are **not** preceeded by *Avi*.
+Now lets reverse the situation, we want all *Mehenwal* which are **not** preceded by *Avi*.
 We want *Mehenwal* from *Shubhranshu Mehenwal*
 
 ```py
