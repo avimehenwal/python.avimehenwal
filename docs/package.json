@@ -7,7 +7,7 @@
   "author": "avimehenwal",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev",
+    "dev": "vuepress dev",
     "docs:build": "vuepress build",
     "cl": "standard-version --dry-run"
   },

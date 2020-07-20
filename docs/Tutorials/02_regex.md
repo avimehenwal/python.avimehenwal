@@ -152,10 +152,23 @@ We want *Mehenwal* from *Shubhranshu Mehenwal*
 (?<!Avi) Mehenwal
 ```
 
+## :rose: Grep
+
+> Global Regular Expression
+
+egrep - Extended regular expressions
+:   include all of the basic **meta-characters**
+    along with additional meta-characters to express more complex matches.
+
 ## :rosette: Resources
 
 * https://www.regular-expressions.info/refrepeat.html
 * [Test and explain your RE](https://regex101.com/)
+* [One Liner Programs](https://en.wikipedia.org/wiki/One-liner_program)
+* [how-to-replace-perl-one-liner-regex-with-python-one-liner](https://stackoverflow.com/questions/58608239/how-to-replace-perl-one-liner-regex-with-python-one-liner)
+* [Python one Liners](https://wiki.python.org/moin/Powerful%20Python%20One-Liners)
+* [grep - global regex](https://en.wikipedia.org/wiki/Grep)
+* [extended grep](https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux)
 
 *[RE]: Regular Expressions | regex
 
