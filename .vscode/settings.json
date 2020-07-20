@@ -17,7 +17,8 @@
         "netlify",
         "component",
         "node",
-        "markdown"
+        "markdown",
+        "git"
     ],
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,

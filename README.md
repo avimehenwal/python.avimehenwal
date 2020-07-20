@@ -11,6 +11,14 @@
 
 ![Homepage with logo](/demo/homepage-with-logo.png)
 
+## Setup
+
+Configure tracked git hooks in your current repo
+
+```
+git config core.hooksPath hooks
+```
+
 ---
 
 #### :v: Get in touch with me

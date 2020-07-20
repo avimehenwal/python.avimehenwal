@@ -1,0 +1,8 @@
+#!/usr/bin/fish
+
+set TFILES (git ls | wc --lines)
+set RSIZE (du --human-readable --summarize | awk '{print $1}')
+set BRANCH (git branch --show-current)
+
+# echo "#Tracked Files= $TFILES Repository Size= $RSIZE" >> $1
+echo "$BRANCH #TrackedFiles=$TFILES RepositorySize=$RSIZE "
