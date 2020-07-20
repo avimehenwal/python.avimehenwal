@@ -32,7 +32,7 @@ tags:
 ```mermaid
 stateDiagram-v2
     Still :  Still moving description
-    note left of Still : This is the note to the left.
+    note left of Still : This is the note to the left
 
     [*] --> Still
     Still --> [*]

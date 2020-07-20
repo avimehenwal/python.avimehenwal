@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/bash
 
 echo "[post-commit hook] Commit done!"
 
@@ -15,12 +15,14 @@ git diff --stat
 echo -e "Report staged changes"
 git diff --stat --staged
 
+# DOESNT WORK INTERACTIVELY
 echo -e "Spellcheck on markdown files"
 # Run lint only on committed markdown files
-if [[ $(git diff --staged --name-only | grep "md$" | wc --lines) -ne 0 ]]
-then
-	git diff --staged --name-only | grep "md$" | xargs hunspell || true
-fi
+# if [ $(git diff --staged --name-only | grep "md$" | wc --lines) -ne 0 ]
+# then
+# 	git diff --staged --name-only | grep "md$" | xargs hunspell
+# 	# || true
+# fi
 
 # [ ] - Add pylint score with commit message?
 # pylint src/hidden_features.py | grep --only-matching -P " \w+\.\w+/\w+ "
