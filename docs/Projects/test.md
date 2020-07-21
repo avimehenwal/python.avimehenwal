@@ -4,6 +4,7 @@
 <Badge type="warning" vertical="top" text="beta+"  />
 <Badge type="error" vertical="top" text="beta+"  />
 
+
 ## 1.1. markdown-it-ins
 
 ++inserted++
@@ -64,9 +65,48 @@ is maintained by the W3C.
 
 <<< @/../src/hidden_features.py#snippet{5}
 
-## 1.9. Mermaid
+## 1.9. Custom Containers
 
-### 1.9.1. Sequence Diagram
+::: quote alexander
+Some quote please
+:::
+
+::: quote
+Some quote without header
+:::
+
+
+::: theorem Newton's First Law
+In an inertial frame of reference, an object either remains at rest or continues to move at a constant velocity, unless acted upon by a force.
+
+  ::: right
+  From [Wikipedia](https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion)
+  :::
+:::
+
+::: tip
+Tip container of `@vuepress/theme-default`
+:::
+
+::: right
+From [Wikipedia](https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion)
+:::
+
+## 1.10. Badges
+
+sadnfoidsnofsd  klsndfi nsidfon siodnf dsf
+<Badge type="warning" vertical="top" text="Lazy loading"  />
+isdbfios nfosdnf osdn fosnf osndfion siodnfosdn
+<Badge type="warning" vertical="middle" text="Lazy loading"  />
+sndofkn odsnfios ndfioksnd iofnsiodfnios nfio
+<Badge type="tip" vertical="middle" text="Lazy loading"  />
+sndofkn odsnfios ndfioksnd iofnsiodfnios nfio
+<Badge type="error" vertical="middle" text="Lazy loading"  />
+dsifnioa fnioasnf ionadsio fniodfn oidn f
+
+## 1.11. Mermaid
+
+### 1.11.1. Sequence Diagram
 
 ``` mermaid
 sequenceDiagram
@@ -76,7 +116,7 @@ loop every minute
 end
 ```
 
-### 1.9.2. Pie Chart
+### 1.11.2. Pie Chart
 
 ```mermaid
 pie title Pets adopted by volunteers
@@ -85,7 +125,7 @@ pie title Pets adopted by volunteers
 	"Rats" : 15
 ```
 
-### 1.9.3. Git graph
+### 1.11.3. Git graph
 
 ```mermaid
 gitGraph:
@@ -106,7 +146,7 @@ commit
 merge newbranch
 ```
 
-### 1.9.4. Gantt Chart
+### 1.11.4. Gantt Chart
 
 [Basics of Gantt Chart](https://avimehenwal.in/blog/gantt-chart/)
 
@@ -142,7 +182,7 @@ Add another diagram to demo page    :48h
 ```
 
 
-### 1.9.5. Add all markdown packages
+### 1.11.5. Add all markdown packages
 
 ```
 yarn add -D markdown-it-container markdown-it-footnote markdown-it-deflist markdown-it-emoji markdown-it-mark markdown-it-abbr markdown-it-sub markdown-it-sup markdown-it-ins

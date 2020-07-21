@@ -91,8 +91,8 @@ module.exports = {
       {
         type: 'quote',
         defaultTitle: 'Anonymous',
-        before: info => `<div class="quote"><p class="title">${info}</p>`,
-        after: info => `${info}</div>`,
+        before: info => `<div class="quote">`,
+        after: info => `<p class="title">${info}</p></div>`,
       },
     ]
   ],
