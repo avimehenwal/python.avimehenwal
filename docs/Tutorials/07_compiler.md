@@ -337,6 +337,10 @@ Take examples of python, node, rust, java, bash, zsh compilers.
 
 ## :cow: Parser Generators
 
+> Parser check the grammer and syntax of a natural/computer language.
+> Syntatic Analysis
+
+
 * [Compiler-compiler softwares](https://en.wikipedia.org/wiki/Compiler-compiler)
   * [YACC](https://en.wikipedia.org/wiki/Yacc)
   * [GNU Bison](https://en.wikipedia.org/wiki/GNU_Bison)

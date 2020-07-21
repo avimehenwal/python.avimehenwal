@@ -167,6 +167,7 @@ def infinite_stream(start: int) -> Generator[int, None, None]:
 
 * [Parent pointer tree/ Spaghetti/cactus stack](https://en.wikipedia.org/wiki/Parent_pointer_tree)
 * [Python Grammer Specification](https://docs.python.org/3/reference/grammar.html)
+* [Python Special Variables](https://docs.python.org/3/reference/datamodel.html)
 
 
 
