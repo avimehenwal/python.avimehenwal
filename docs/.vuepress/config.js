@@ -1,3 +1,11 @@
+const extendsNetworks = {
+  email: {
+    sharer: 'mailto:?subject=@title&body=@url%0D%0A%0D%0A@description',
+    type: 'direct',
+    icon: '/email.png',
+  },
+}
+
 module.exports = {
   title: 'Programming',
   description: 'Avi Mehenwal python programming practise',
@@ -41,6 +49,7 @@ module.exports = {
     "@vuepress/plugin-nprogress",
     "@vuepress/plugin-blog",
     "@vuepress/pwa",
+    ['@dovyp/vuepress-plugin-clipboard-copy', true],
     // https://mermaid-js.github.io/mermaid/#/mermaidAPI?id=mermaidapi-configuration-defaults
     [ 'vuepress-plugin-mermaidjs', {
       // "theme": 'forest',
@@ -94,6 +103,17 @@ module.exports = {
         before: info => `<div class="quote">`,
         after: info => `<p class="title">${info}</p></div>`,
       },
+    ],
+    [
+      'social-share',
+      {
+        networks: ['twitter', 'facebook', 'reddit', 'telegram', 'whatsapp'],
+        twitterUser: 'avimehenwal',
+        fallbackImage: '/hero.png',
+        autoQuote: true,
+        isPlain: false,
+        extendsNetworks,
+      }
     ]
   ],
   markdown: {
