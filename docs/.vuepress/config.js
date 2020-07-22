@@ -49,6 +49,7 @@ module.exports = {
     "@vuepress/plugin-nprogress",
     "@vuepress/plugin-blog",
     "@vuepress/pwa",
+    "reading-progress",
     ['@dovyp/vuepress-plugin-clipboard-copy', true],
     // https://mermaid-js.github.io/mermaid/#/mermaidAPI?id=mermaidapi-configuration-defaults
     [ 'vuepress-plugin-mermaidjs', {
