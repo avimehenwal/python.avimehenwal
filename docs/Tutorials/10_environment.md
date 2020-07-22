@@ -12,7 +12,7 @@ tags:
 <TagLinks />
 
 * Run multiple python appications running on different versions on same machine
-* sets up relative paths (symlinks) to new interpreter
+* sets up relative paths ([symlinks](https://en.wikipedia.org/wiki/Symbolic_link)) to new interpreter
 
 ```
 venv/
@@ -67,7 +67,7 @@ end
 
 classDef green fill:#1f9,stroke-width:0px;
 classDef orange fill:#f96,stroke-width:0px;
-classDef blue fill:#4B8BBE,stroke-width:0px;
+classDef blue fill:#b8d4ff,stroke-width:0px;
 classDef purple fill:#f9f,stroke:#333,stroke-width:0px;
 classDef yellow fill:#FFE873,stroke-width:0px;
 
@@ -77,7 +77,7 @@ click Partial_Bundeling "https://docs.python.org/3.8/distutils/index.html" "Dist
 ```
 
 setup.py keys | what does it do?
-:-------------|--------------
+:-------------|:-------------------
 `packages = ['foo']` | you are promising that the Distutils will find a file `foo/__init__.py`
 `package_dir = {'foo': 'lib'}`   | inside `lib` you will find a `foo/__init__.py`
 `package_data`  | might contain documentation files for package

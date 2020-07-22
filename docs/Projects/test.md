@@ -61,11 +61,13 @@ is maintained by the W3C.
 *here be dragons*
 :::
 
-## 1.8. Inserting code snipped from a python file
+::: tip
+tip tip tip tip tip tip tip tip tip tip tip
+:::
 
-<<< @/../src/hidden_features.py#snippet{5}
-
-## 1.9. Custom Containers
+::: danger
+error error error error error error error error
+:::
 
 ::: quote alexander
 Some quote please
@@ -91,6 +93,11 @@ Tip container of `@vuepress/theme-default`
 ::: right
 From [Wikipedia](https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion)
 :::
+
+## 1.8. Inserting code snipped from a python file
+
+<<< @/../src/hidden_features.py#snippet{5}
+
 
 ## 1.10. Badges
 

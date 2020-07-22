@@ -20,7 +20,7 @@ tags:
 2. Code Style Checker
 3. Structural Analyzer
 
-```
+```bash
 pylint --msg-template='{msg_id}:{line:3d},{column}: {obj}: {msg}'
 
 pylint --output-format=colorized --reports=y --score=y ./src/*.py

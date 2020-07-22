@@ -2,7 +2,7 @@
 <template lang="html">
   <div>
     <h1>
-      Tags <Badge type="error" :text="tagcount"/>
+      Tags <Badge type="warning" :text="tagcount"/>
     </h1>
 
     <span v-for="tag in Object.keys(tags)">

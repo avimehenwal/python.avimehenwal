@@ -99,6 +99,25 @@ Python operators work for built-in classes. But same operator behaves differentl
 
 **For example,** the `+` operator will, perform arithmetic addition on two numbers, merge two lists and concatenate two strings. This feature in Python, that allows same operator to have different meaning according to the context is called operator overloading.
 
+
+```py
+class person:
+    def __init__(self):
+        self.__name=''
+    @property
+    def name(self):
+        return self.__name
+    @name.setter
+    def name(self, value):
+        self.__name=value
+    @name.deleter
+    def name(self, value):
+        print('Deleting..')
+        del self.__name
+```
+
+The above person class includes two methods with the same name `name()`, but with a different number of parameters. This is called method overloading.
+
 ### Polymorphism
 
 A common real example in Python is **file-like objects**. Besides actual files, several other types, including `StringIO` and `BytesIO`, are file-like. A method that acts as files can also act on them because they support the required methods (e.g. read, write).

@@ -23,7 +23,7 @@ A --> B & C
 classDef green fill:#1f9,stroke-width:0px;
 classDef orange fill:#f96,stroke-width:0px;
 classDef yellow fill:#FFE873,stroke-width:0px;
-classDef blue fill:#4B8BBE,stroke-width:0px;
+classDef blue fill:#b8d4ff,stroke-width:0px;
 classDef purple fill:#f9f,stroke:#333,stroke-width:0px;
 
 click A "https://www.wikipedia.org/" "Click to open wikipedia"
@@ -49,6 +49,7 @@ and **without** internet (local database service like sqlite3)
 
 Useful when requirnment changes, now we need 4 databases! With Repositiry pattern it will easily scale
 due to low [cohesion] b/w frotend and backend and high [coupling] at backend
+   A --> B
 
 ```mermaid
 graph LR
@@ -60,7 +61,6 @@ subgraph Using Repositiry Pattern
    D(Remote Service):::blue
    X(Other Service, aws):::orange
 
-   A --> B
    B -- sqlite3 --> C
    B -- firebase --> D
    B -.-> X
@@ -79,7 +79,7 @@ end
 classDef green fill:#1f9,stroke-width:0px;
 classDef orange fill:#f96,stroke-width:0px;
 classDef yellow fill:#FFE873,stroke-width:2px;
-classDef blue fill:#4B8BBE,stroke-width:0px;
+classDef blue fill:#b8d4ff,stroke-width:0px;
 classDef purple fill:#f9f,stroke:#333,stroke-width:0px;
 
 click A "https://www.wikipedia.org/" "Click to open wikipedia"

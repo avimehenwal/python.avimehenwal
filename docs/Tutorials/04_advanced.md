@@ -16,7 +16,7 @@ tags:
 
 ## :fire_engine: Generators
 
-Generators are used to create iterators, but with a different approach.
+Generators are used to create <Badge type="error" vertical="middle" text="iterators" />, but with a different approach.
 Generators are simple functions which return an iterable set of items, one at a time, in a special way.
 
 ::: tip yield
@@ -43,7 +43,7 @@ for random_number in lottery():
 Some simple generators can be coded succinctly as expressions using a syntax similar to list comprehensions but with parentheses instead of square brackets.
 
 ```python
->>> sum(i*i for i in range(10))                 # sum of squares
+>>> sum(i*i for i in range(10))   # sum of squares
 285
 ```
 
@@ -80,11 +80,11 @@ p
 s
 ```
 
-## :diamond_shape_with_a_dot_inside: [Closure]
+## :diamond_shape_with_a_dot_inside: Closure
 
 A [closure] is a function object that remembers values in enclosing scopes even if they are not present in memory.
 
-::: warning Nested Functions
+::: tip Nested Functions
 It's very important to note that the nested functions can access the variables of the enclosing scope.
 However, at least in python, they are only readonly.
 :::
@@ -103,17 +103,20 @@ They can be implemented with the `async def` statement.
 
 ## :memo: Memory Management
 
-Python does automatic memory management (reference counting for most objects and **garbage collection**
+Python does automatic memory management (reference counting for most objects and
+<Badge type="tip" vertical="middle" text="garbage collection" />
 to eliminate cycles). The memory is freed shortly after the last reference to it has been eliminated.
 
-Python memory is managed by Python **private heap space**. All Python objects and data structures are located in a private heap. The programmer does not have an access to this private heap and interpreter takes care of this Python private heap.
+Python memory is managed by Python <Badge type="error" vertical="middle" text="private heap space" />.
+All Python objects and data structures are located in a private heap. The programmer does not have an access to this private heap and interpreter takes care of this Python private heap.
 
 ## :lock: GIL - Global Interpreted Lock
 
+Only specific to CPython implementation
 
-## :computer: [Metaprogramming]
+## :computer: Metaprogramming
 
-> treat other programs as data
+> [Metaprogramming] treat other programs as data
 
 * [Metaclasses](https://en.wikipedia.org/wiki/Metaclass) are provided by python
   * a metaclass is a class whose instances are classes.
@@ -130,6 +133,8 @@ Default car doesnt have a harness to carry bicycles. We monkey patch it to a car
 
 > used to describe something
 
+In general, a descriptor is an object attribute with “binding behavior”, one whose attribute access has been overridden by methods in the descriptor protocol. Those methods are `__get__()`, `__set__()`, and `__delete__()`. If any of those methods are defined for an object, it is said to be a descriptor.
+
 * https://docs.python.org/3/howto/descriptor.html
 
 ## :smile: Good Questions
@@ -137,8 +142,8 @@ Default car doesnt have a harness to carry bicycles. We monkey patch it to a car
 *  Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really work in parallel? What about GIL?
    * [Why GIL still exists in CPython?](https://wiki.python.org/moin/GlobalInterpreterLock)
 * Dependency
-  * Functional Dependencies **FDs**
-    * If ( t1(A) == t2(A)) then ( t1(B) = t2(B) )
+  * [Functional Dependencies](https://en.wikipedia.org/wiki/Functional_dependency) **FDs**
+    * If $( t1(A) = t2(A)) \implies ( t1(B) = t2(B) )$
     * duplicated are acceptable as long as the condition is satisfied
   * Direct Dependency
   * [Transitive Dependency](https://en.wikipedia.org/wiki/Transitive_dependency)
