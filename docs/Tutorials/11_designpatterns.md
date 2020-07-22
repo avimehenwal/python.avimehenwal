@@ -60,7 +60,7 @@ subgraph Using Repositiry Pattern
    C(Local Service):::purple
    D(Remote Service):::blue
    X(Other Service, aws):::orange
-
+   A --> B
    B -- sqlite3 --> C
    B -- firebase --> D
    B -.-> X
@@ -70,11 +70,9 @@ subgraph without using Repositiry Pattern
    E(Frontend Logic):::green
    F(Local Service):::purple
    G(Remote Service):::blue
-
    E -- sqlite3 --> F
    E -- firebase --> G
 end
-
 
 classDef green fill:#1f9,stroke-width:0px;
 classDef orange fill:#f96,stroke-width:0px;
