@@ -13,9 +13,10 @@ tags:
 
 <TagLinks />
 
-* How to write your own programming language?
+> How to write your own programming language?
+
 * Examples
-  * GCC - GNU Compiler Collection
+  * GNU Compiler Collection - [GCC](https://en.wikipedia.org/wiki/GNU_Compiler_Collection)
   * LLVM
   * Clang
   * javascript Compilers - V8 Engine
@@ -41,10 +42,11 @@ Cross-Compiler
 
     ```mermaid
     graph LR
-    A(Host architecture x86)
-    B(Target architecure ARM)
-
+    A(Host architecture x86):::blue
+    B(Target architecure ARM):::yellow
     A -- CrossCompilation --> B
+    classDef blue fill:#b8d4ff,stroke-width:0px;
+    classDef yellow fill:#FFE873,stroke-width:0px;
     ```
     1. compiler for different CPU Architecture
     2. on x86 compiling code for ARM Architecture
@@ -60,10 +62,11 @@ Transpiler - S2S compiler
 
     ```mermaid
     graph LR
-    A(modern ES-2015)
-    B(old ES-5)
-
+    A(modern ES-2015):::green
+    B(old ES-5):::blue
     A -- Transpile --> B
+    classDef green fill:#1f9,stroke-width:0px;
+    classDef blue fill:#b8d4ff,stroke-width:0px;
     ```
 
 Decompiler
@@ -71,10 +74,11 @@ Decompiler
 
     ```mermaid
     graph LR
-    A(Low level Language):::green
+    A(Low level Language):::yellow
     B(High Level Language):::orange
-
     A -- Decompiler --> B
+    classDef orange fill:#f96,stroke-width:0px;
+    classDef yellow fill:#FFE873,stroke-width:0px;
     ```
 
 Bytecode Compiler
@@ -91,18 +95,15 @@ JIT - Just in time Compilers
 
 * Translates code from one form to another
 
-
 ```mermaid
 graph LR
-A(Front End):::green
-B(Middle End):::orange
-C(Back End):::purple
-
+A(Front End):::yellow
+B(Middle End):::purple
+C(Back End):::blue
 A --> B --> C
-
-classDef green fill:#1f9,stroke-width:0px;
-classDef orange fill:#f96,stroke-width:0px;
+classDef blue fill:#b8d4ff,stroke-width:0px;
 classDef purple fill:#f9f,stroke:#333,stroke-width:0px;
+classDef yellow fill:#FFE873,stroke-width:0px;
 ```
 
 ## :art: Compiler Frontend
@@ -111,13 +112,23 @@ Generally a **5 Stages Process** Line. Just how a Buddha rice bown is assembles 
 
 ```mermaid
 graph LR
-C(Compiler Frontend):::green
+C(Compiler Frontend):::yellow
 S(Source Code)
 I(IR Intermediate Representation)
-
 S --> C -- compiles --> I
+classDef yellow fill:#FFE873,stroke-width:0px;
+```
 
-classDef green fill:#1f9,stroke-width:0px;
+```mermaid
+journey
+title Source code to IR Journey
+    Canonicalization: 5: Source Code
+  section Macro expansion
+    Preprocessing: 4: Source Code
+  section Scanning and Evaluating
+    Lexical Analysis: 1: Lexer/Parser generator
+    Parsing / Syntax Analysis: 3: Parse Tree
+    Symentic Analysis: 2: Symbol Table
 ```
 
 ### :racing_car: Canonicalization
@@ -278,14 +289,11 @@ Outputs **Symbol Table**
 ```mermaid
 graph LR
 A(IR from Frontend)
-B(Compiler Middle End):::orange
+B(Compiler Middle End):::purple
 C(Optimized IR)
-
 A --> B -- optimize --> C
-
-classDef orange fill:#f96,stroke-width:0px;
+classDef purple fill:#f9f,stroke:#333,stroke-width:0px;
 ```
-
 
 ## :dragon_face: Compiler Backend
 
@@ -302,12 +310,10 @@ classDef orange fill:#f96,stroke-width:0px;
 ```mermaid
 graph LR
 A(Optimized IR from Middle End)
-B(Compiler Backend):::purple
+B(Compiler Backend):::blue
 C(CPU ISA Code / Bytecode)
-
 A --> B -- compiles --> C
-
-classDef purple fill:#f9f,stroke:#333,stroke-width:0px;
+classDef blue fill:#b8d4ff,stroke-width:0px;
 ```
 
 ### :mag_right: Overview
@@ -328,6 +334,7 @@ flowchart LR
 
 FrontEnd --> MiddleEnd
 MiddleEnd --> BackEnd
+classDef default stroke-width:0px;
 ```
 
 ### How compilers are used?

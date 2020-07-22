@@ -13,16 +13,18 @@ tags:
 
 <TagLinks />
 
+> If you decide to use a regex to solve your problem, now have two problems!
+
 ## :3rd_place_medal: Vocabulary
 
 * Qualifiers, Meta-characters, Meta-classes
 * RE works on characters
   * `[0-9]` valid
-  * `[0-255]` will get translated to `[0-2]`
+  * `[0-255]` will only match `[0-2]`
 * `(?` waits for next character to assign a meaning
 
 Pattern | Description
---------|-------------
+:------:|:-------------
 `(?:...` | non returning grouping, non capturing version
 `(?=...)` | Positive Look ahead Assertion
 `(?!...)` | Negative Look ahead Assertion
@@ -33,6 +35,8 @@ Pattern | Description
 
 ## :1st_place_medal: RE Repetition Qualifiers
 
+`.` In the default mode, this matches any character except a newline.
+
 * Non-greedy variants (usually followed by `?`)
 
 Greedy Qualifiers | Non-greedy variants
@@ -42,15 +46,21 @@ Greedy Qualifiers | Non-greedy variants
 `ab?` | `??`
 `a{6}` | `a{3,5}?`
 
-```py
-(.*)    # 0..N Any charter (except space) matching 0 to n number of times
-(.+)    # 1..N Match at least 1 to n number of times
-(.?)    # 0..1 Match either O or 1 number of time
-```
+::: tip Common regex patterns
+Regex  | meaning
+:-----:|:--------------
+`(.*)` | 0..N Any charter (except space) matching 0 to n number of times
+`(.+)` | 1..N Match at least 1 to n number of times
+`(.?)` | 0..1 Match either O or 1 number of time
+:::
+
 
 ## :baby: Qualifiers
 
-The question mark character, ?, matches either once or zero times; you can think of it as marking something as being optional. For example, home-?brew matches either 'homebrew' or 'home-brew'.
+The question mark character `?`, matches either once or zero times;
+you can think of it as marking something as being optional.
+<Badge type="tip" vertical="middle" text="For Example," />
+`home-?brew` matches either `'homebrew'` or `'home-brew'`
 
 ## :footprints: Meta-characters and Meta-character Classes
 
@@ -73,7 +83,7 @@ Meta-character Classes
 
 ## :four: IP pattern
 
-IP generation Rules
+Lets start with what we already know about IP generation Rules
 
 1. 4 octets
 2. each octet value between `0-255`
@@ -88,8 +98,7 @@ IP generation Rules
 [0-9]{1,3}
 $                       # last character match followed by a space
 """
-
-// Using named group repetition
+# Using named group repetition
 /^(?:(?P<octet>[0-9]{1,3})\.){3}(?P=octet)$/
 ```
 
@@ -160,6 +169,10 @@ egrep - Extended regular expressions
 :   include all of the basic **meta-characters**
     along with additional meta-characters to express more complex matches.
 
+    ```sh
+    egrep -c '^begin|end$' myfile.txt
+    ```
+
 ## :rosette: Resources
 
 * https://www.regular-expressions.info/refrepeat.html
@@ -169,6 +182,7 @@ egrep - Extended regular expressions
 * [Python one Liners](https://wiki.python.org/moin/Powerful%20Python%20One-Liners)
 * [grep - global regex](https://en.wikipedia.org/wiki/Grep)
 * [extended grep](https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux)
+* [Debugging webapp](https://www.debuggex.com/r/EkIvhuQ8TmetiL5q)
 
 *[RE]: Regular Expressions | regex
 

@@ -23,7 +23,7 @@ A --> B & C
 classDef green fill:#1f9,stroke-width:0px;
 classDef orange fill:#f96,stroke-width:0px;
 classDef yellow fill:#FFE873,stroke-width:0px;
-classDef blue fill:#4B8BBE,stroke-width:0px;
+classDef blue fill:#b8d4ff,stroke-width:0px;
 classDef purple fill:#f9f,stroke:#333,stroke-width:0px;
 
 click A "https://www.wikipedia.org/" "Click to open wikipedia"
@@ -59,7 +59,6 @@ subgraph Using Repositiry Pattern
    C(Local Service):::purple
    D(Remote Service):::blue
    X(Other Service, aws):::orange
-
    A --> B
    B -- sqlite3 --> C
    B -- firebase --> D
@@ -70,16 +69,14 @@ subgraph without using Repositiry Pattern
    E(Frontend Logic):::green
    F(Local Service):::purple
    G(Remote Service):::blue
-
    E -- sqlite3 --> F
    E -- firebase --> G
 end
 
-
 classDef green fill:#1f9,stroke-width:0px;
 classDef orange fill:#f96,stroke-width:0px;
 classDef yellow fill:#FFE873,stroke-width:2px;
-classDef blue fill:#4B8BBE,stroke-width:0px;
+classDef blue fill:#b8d4ff,stroke-width:0px;
 classDef purple fill:#f9f,stroke:#333,stroke-width:0px;
 
 click A "https://www.wikipedia.org/" "Click to open wikipedia"

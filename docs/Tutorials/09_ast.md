@@ -11,8 +11,9 @@ tags:
 
 <TagLinks />
 
-::: theorem AST - Abstract SYntax Tree
-Representing in python, python code
+::: tip AST - Abstract SYntax Tree
+
+==Representing in python of python code==
 
 programatically inspecting, manupulating your code
 :::
@@ -32,6 +33,6 @@ programatically inspecting, manupulating your code
 * Cosmic ray
 * Source Mapping - from JS world
   * test real code vs minified version
-* 
+*
 
 <Footer />
