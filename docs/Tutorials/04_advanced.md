@@ -168,6 +168,47 @@ def infinite_stream(start: int) -> Generator[int, None, None]:
 ```
 
 
+## :trident: Python Magic Variables
+
+What does `__all__` magic variable do in python?
+:   It's a list of ==public objects== of that module, as interpreted by `import *`.
+
+    It overrides the default of hiding everything that begins with an underscore.
+
+    <Badge type="tip" vertical="middle" text="For example" />, the following code
+    in a `foo.py` explicitly exports the symbols `bar` and `baz`
+
+    ```py
+    # foo.py
+    __all__ = ['bar', 'baz']
+
+    waz = 5
+    bar = 10
+    def baz(): return 'baz'
+    ```
+
+    These symbols can then be imported like so:
+
+    ```py
+    from foo import *
+    print(bar)
+    print(baz)
+    # The following will trigger an exception, as "waz" is not exported by the module
+    print(waz)
+    ```
+
+What is the difference between `__getattr__` and `__getattribute__`?
+:   means get object attribute
+
+    With objects, you need to deal with its attributes. Ordinarily we do instance.attribute. Sometimes we need more control (when we do not know the name of the attribute in advance).
+
+    <Badge type="tip" vertical="middle" text="For example" />, instance.attribute would become getattr(instance, attribute_name). Using this model, we can get the attribute by supplying the attribute_name as a string.
+
+    ::: right
+    [Understanding the difference between __getattr__ and __getattribute__](https://stackoverflow.com/questions/4295678/understanding-the-difference-between-getattr-and-getattribute)
+    :::
+
+
 ## :selfie: References
 
 * [Parent pointer tree/ Spaghetti/cactus stack](https://en.wikipedia.org/wiki/Parent_pointer_tree)

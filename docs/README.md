@@ -2,7 +2,7 @@
 home: true
 heroImage: /logo.svg
 heroText: Programming Language
-tagline: blog by avi 😃 mehenwal
+tagline: notes by avi 😃 mehenwal
 actionText: 🏑 Get Started ⛳️
 actionLink: /tutorials/
 features:
@@ -10,7 +10,7 @@ features:
   details: Write short automation scritps to complicated CLI tools or web-apps. Use any programming paradigm you are familiar with. Everything is possible
 - title: 🛠 Both compiled and interpreted
   details: Depends on implementation. CPython implementation is first compiled to bytecode by PVM and then sent for execution by CPU. REPL uses interpretor to execute python
-- title: 🖥 Cross - Platform
+- title: 🖥 Dynamically typed and CrossPlatform
   details: Write once and use everywhere. Great cross platform portability, run same softwares on your machines and then deploy them cloud servers
 footer: MIT Licensed | Avi Mehenwal 🅰️
 ---

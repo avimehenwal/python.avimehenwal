@@ -44,7 +44,7 @@ data_list = [Xl_build_log, Master_build_log, Ts_build_log]
 def regex_findall(pattern, data_list):
     for data in data_list:
         expr_find = re.findall(pattern, data)
-        print(expr_find)
+        print(pattern, expr_find)
 
 # build_console_log pattern
 logfile_pattern = '/[\w|\d|/|.]+'

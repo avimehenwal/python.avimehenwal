@@ -23,6 +23,7 @@ tags:
 * https://github.com/willmcgugan/rich
 * https://www.priceintelligently.com/
 * https://www.google.com/search?q=SaaS&newwindow=1&hl=en&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjciOvMtdrpAhUcZxUIHXqyBmIQ_AUoAXoECDoQAw&biw=1294&bih=641#imgrc=Qwze79n_6S-sMM
+* http://effbot.org/pyfaq/
 
 ## :woman_office_worker: Interview Prep
 

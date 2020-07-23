@@ -234,6 +234,10 @@ finally:
     print('Runs under all circumstances')
 ```
 
+### Else with for loop
+
+<<< @/../src/hidden_features.py#snippet{5}
+
 ## :building_construction: Classes
 
 * [old-style vs new-style classes difference](https://realpython.com/python-metaclasses/)
