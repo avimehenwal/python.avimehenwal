@@ -1,13 +1,13 @@
 ---
 title: Data Structures
 tags:
-- data
-- structure
-- read
-- write
-- manipulation
-- analysis
-- complexity
+  - data
+  - structure
+  - read
+  - write
+  - manipulation
+  - analysis
+  - complexity
 ---
 
 # Data Structures
@@ -38,9 +38,7 @@ How to measure if a algorith is better than another?
 Enter [Time Complexity](https://en.wikipedia.org/wiki/Time_complexity), estimated by counting the
 number of elementary operations performed by the algorithm
 
-$$
-Time \, Complexity \neq Execution \, Time
-$$
+$$Time \, Complexity \neq Execution \, Time$$
 
 Since an algorithm's running time may vary among different inputs of the same size, one commonly considers the worst-case time complexity, which is the maximum amount of time required for inputs of a given size
 
@@ -58,24 +56,23 @@ quadratic
 Computer Science is no more about computers than astronomy is about telescopes
 :::
 
-* Python operations time complexity
-  * https://wiki.python.org/moin/TimeComplexity
-
+- Python operations time complexity
+  - https://wiki.python.org/moin/TimeComplexity
 
 ### How do we calculate it?
 
-* Difference b/w time and space complexity
-* Is there a tool to auto calculate it?
-
-[*DS]: Data Structures
+- Difference b/w time and space complexity
+- Is there a tool to auto calculate it?
 
 [data structure]: https://en.wikipedia.org/wiki/Data_structure
 [data type]: https://en.wikipedia.org/wiki/Data_type
-[ADT]: https://en.wikipedia.org/wiki/Abstract_data_type
+[adt]: https://en.wikipedia.org/wiki/Abstract_data_type
 
 ## :cyclone: References
 
-* https://en.wikipedia.org/wiki/Persistent_data_structure
+- https://en.wikipedia.org/wiki/Persistent_data_structure
 
+<!-- prettier-ignore -->
+*[DS]: Data Structures
 
 <Footer />

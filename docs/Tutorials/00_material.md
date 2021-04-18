@@ -1,34 +1,32 @@
 ---
 title: Study material
 tags:
-- python
-- resources
-- study
-- material
+  - python
+  - resources
+  - study
+  - material
 ---
 
 # :snake: Python study material
 
 <TagLinks />
 
-
 ## :office: Official resources
 
-* https://www.python.org/about/gettingstarted/
-* https://docs.python.org/3/tutorial/index.html
+- https://www.python.org/about/gettingstarted/
+- https://docs.python.org/3/tutorial/index.html
 
 ## :family: Others
 
-* https://gist.github.com/sloria/7001839
-* https://github.com/willmcgugan/rich
-* https://www.priceintelligently.com/
-* https://www.google.com/search?q=SaaS&newwindow=1&hl=en&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjciOvMtdrpAhUcZxUIHXqyBmIQ_AUoAXoECDoQAw&biw=1294&bih=641#imgrc=Qwze79n_6S-sMM
-* http://effbot.org/pyfaq/
+- https://gist.github.com/sloria/7001839
+- https://github.com/willmcgugan/rich
+- https://www.priceintelligently.com/
+- https://www.google.com/search?q=SaaS&newwindow=1&hl=en&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjciOvMtdrpAhUcZxUIHXqyBmIQ_AUoAXoECDoQAw&biw=1294&bih=641#imgrc=Qwze79n_6S-sMM
+- http://effbot.org/pyfaq/
 
 ## :woman_office_worker: Interview Prep
 
-* https://github.com/MaximAbramchuck/awesome-interview-questions
-
+- https://github.com/MaximAbramchuck/awesome-interview-questions
 
 ```mermaid
 stateDiagram-v2
@@ -51,17 +49,17 @@ stateDiagram-v2
 :cowboy_hat_face: Try to do ==good science== rather than :money_mouth_face: popular science.
 
 Liberal Education
-:   Learn something about everything and everything about something.
+: Learn something about everything and everything about something.
 
 :::
-
 
 # :bug: Pythonic
 
 - $Generators \subset Iterators$ All generators are iterators BUT not all iterators are generators
 - Generators are usually attached to functions have `next()` method and `yield`
 - Iterator creates a list generator generates ONE item at a time for computation
-  * Iterator *advantages* Creates item for computation one at a time and does not consumes more memory. <Badge type="tip" vertical="middle" text="Lazy Loading" />
+  - Iterator _advantages_ Creates item for computation one at a time and does not consumes more memory. <Badge type="tip" vertical="middle" text="Lazy Loading" />
+- [Lazy Loading](https://stackoverflow.com/questions/39140348/python-lazy-loading)
 - Python supports <Badge type="error" vertical="middle" text="Multiple Inheritance" />
   - Problem - cyclic dependency in case same method in both base classes
 
@@ -94,12 +92,13 @@ Note that Python's GIL is only really an issue for
 
 ## :unicorn: OOP - Object Oriented Programming
 
+[Examples](https://github.com/CoreyMSchafer/code_snippets/tree/master/Object-Oriented)
+
 ### Python Operator Overloading
 
 Python operators work for built-in classes. But same operator behaves differently with different types.
 
 **For example,** the `+` operator will, perform arithmetic addition on two numbers, merge two lists and concatenate two strings. This feature in Python, that allows same operator to have different meaning according to the context is called operator overloading.
-
 
 ```py
 class person:
@@ -133,17 +132,22 @@ Major Difference between Python 2 and Python 3:
 1. print is now a function instead of keyword
 2. xrange (iterable) is now replaced with range()
 3. python 3 supports Unicode
-4. raw_input() is replaced by input() method
+4. `raw_input()` is replaced by `input()` method
 
 ### Python Classes and Functions
 
+> Classes Encapsulates data and related operation functions
+
 - New Classes and old classes. Difference ?
 - Though classmethod and staticmethod are quite similar, there's a slight difference in usage for both entities: classmethod must have a reference to a class object as the first parameter, whereas staticmethod can have no parameters at all.
-- Classmethods leads to Factory Design pattern in python
+- Classmethods leads to **Factory Design pattern** in python
+- Instance attributes/variables and class attributes
 
 ### Python @staticmethod
 
 Static methods are a special case of methods. Sometimes, you'll write code that belongs to a class, but that doesn't use the object itself at all. For example:
+
+> Used when `self` is not used in the class. There is no point in adding self to a method signature of its not being used. Declare your method static and it uses less memory if many classes instantiated.
 
 ```python
 class Pizza(object):
@@ -176,7 +180,13 @@ It allows us to override the mix_ingredients method in a subclass. If we used a 
 
 ### Python @classmethods
 
+> Methods which accepts class as 1st positional argument
+
 Having said that, what are class methods? Class methods are methods that are not bound to an object, but to… a class!
+
+- Used to alter class attributes
+- ==used as alternatives constructors?== What does it mean?
+- parse the input before calling and returning the constructors
 
 ```python
 >>> class Pizza(object):
@@ -253,6 +263,7 @@ Traceback (most recent call last):
   File "<stdin>", line 3, in get_radius
 NotImplementedError
 ```
+
 There's a way to triggers this way earlier, when the object is being instantiated, using the abc module that's provided with Python.
 
 ```python
@@ -364,13 +375,13 @@ In such a case, every pizza you will build by inheriting from BasePizza will hav
 
 > I am looking for Jobs ... :sunglasses:
 
-* [Github](https://github.com/avimehenwal/)
-* [My Website](https://avimehenwal.in)
-* [My Blog v2](https://avimehenwal2.netlify.app/)
-* [Twitter Handle](https://twitter.com/avimehenwal)
-* [LinkedIn](https://in.linkedin.com/in/avimehenwal)
-* [Stackoverflow](https://stackoverflow.com/users/1915935/avi-mehenwal)
+- [Github](https://github.com/avimehenwal/)
+- [My Website](https://avimehenwal.in)
+- [My Blog v2](https://avimehenwal2.netlify.app/)
+- [Twitter Handle](https://twitter.com/avimehenwal)
+- [LinkedIn](https://in.linkedin.com/in/avimehenwal)
+- [Stackoverflow](https://stackoverflow.com/users/1915935/avi-mehenwal)
 
 <a href="https://www.buymeacoffee.com/F1j07cV" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 
- Spread Love :hearts: and not :no_entry_sign: hatred   [![Twitter Follow](https://img.shields.io/twitter/follow/avimehenwal.svg?style=social)](https://twitter.com/avimehenwal)
+Spread Love :hearts: and not :no_entry_sign: hatred [![Twitter Follow](https://img.shields.io/twitter/follow/avimehenwal.svg?style=social)](https://twitter.com/avimehenwal)

@@ -1,21 +1,23 @@
 ---
 title: Associative Array
 tags:
-- associative
-- array
-- hashmap
-- hashing
-- dictionary
+  - associative
+  - array
+  - hashmap
+  - hashing
+  - dictionary
 ---
 
 # Associative Arrays
 
 <TagLinks />
 
-aka Hash Maps in java and dictionaries in python world
+> aka **Hash Maps** in java, **dictionaries** in python world, **Objects** in javascript and **Maps** in clojure
 
 Python’s dictionaries are implemented as <Badge type="error" vertical="middle" text="resizable hash tables" />.
 Compared to <Badge type="tip" vertical="middle" text="B-trees" />, this gives better performance for lookup (the most common operation by far) under most circumstances, and the implementation is simpler.
+
+![Associate array or hash map](../.vuepress/public/img/associative-array.png)
 
 Dictionaries work by computing a hash code for each key stored in the dictionary using the
 built-in `hash()` function. The hash code varies widely depending on the key; for example, “Python”
@@ -31,11 +33,11 @@ But bear in mind the hash function is implemented for each kind of objects diffe
 
 `hash()` calls `__hash__()` fn internally
 
-  ::: right
-  [Python hash implementation](http://effbot.org/zone/python-hash.htm)
+::: right
+[Python hash implementation](http://effbot.org/zone/python-hash.htm)
 :::
 
-* [Hash function implementation in python](https://github.com/ncorbuk/Python-Tutorial---Dictionaries-Hash-Table-Hash-Map-Code-Walk-through-/blob/master/HashTable.py)
+- [Hash function implementation in python](https://github.com/ncorbuk/Python-Tutorial---Dictionaries-Hash-Table-Hash-Map-Code-Walk-through-/blob/master/HashTable.py)
 
 Python lists are actually arrays — contiguous chunks of memory.
 The name "list" may be misleading to people who know about double-linked lists but are unfamiliar with Python.
@@ -45,8 +47,8 @@ You can picture a Python list as a row of slots, where each slot can hold a ==Py
 
 Sending large file from one computer to another?
 
-* Send multiple times and check - naive approach
-* Used to verify secure downloads from internet.
+- Send multiple times and check - naive approach
+- Used to verify secure downloads from internet.
 
 Hash Function
 
@@ -69,14 +71,16 @@ Strategies:
 3. Hashing Algorithms
 4. Hashing and Salting
 
-* https://en.wikipedia.org/wiki/Rainbow_table
+- https://en.wikipedia.org/wiki/Rainbow_table
 
 ## Resources
 
-* https://en.wikipedia.org/wiki/Hash_table
-* https://en.wikipedia.org/wiki/Associative_array
-* https://stackoverflow.com/questions/327311/how-are-pythons-built-in-dictionaries-implemented
-* https://www.python.org/dev/peps/pep-0456/
-* https://just-taking-a-ride.com/inside_python_dict/chapter4.html
+- https://en.wikipedia.org/wiki/Hash_table
+- https://en.wikipedia.org/wiki/Associative_array
+- https://stackoverflow.com/questions/327311/how-are-pythons-built-in-dictionaries-implemented
+- https://www.python.org/dev/peps/pep-0456/
+- https://just-taking-a-ride.com/inside_python_dict/chapter4.html
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YR7Vp7HcAgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <Footer />

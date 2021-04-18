@@ -1,9 +1,9 @@
 ---
 title: Design Patterns
 tags:
-- design
-- patterns
-- programming
+  - design
+  - patterns
+  - programming
 ---
 
 # :high_brightness: Design Patterns
@@ -17,8 +17,9 @@ graph TD
 A([Design Patterns]):::green
 B(Structural):::orange
 C(Creational):::purple
+D(Behavioural):::blue
 
-A --> B & C
+A --> B & C & D
 
 classDef green fill:#1f9,stroke-width:0px;
 classDef orange fill:#f96,stroke-width:0px;
@@ -47,9 +48,13 @@ backend services.
 Say we want an app (web, mobile) which works both with internet (using remote service like Firebase)
 and **without** internet (local database service like sqlite3)
 
+::: tip DIP
+[seems similar to ](https://softwareengineering.stackexchange.com/questions/390061/dependency-inversion-vs-repository-pattern-app-layer-dependency-on-orm)Dependency Inversion Principle from SOLID
+:::
+
 Useful when requirnment changes, now we need 4 databases! With Repositiry pattern it will easily scale
 due to low [cohesion] b/w frotend and backend and high [coupling] at backend
-   A --> B
+A --> B
 
 ```mermaid
 graph LR
@@ -88,19 +93,18 @@ click A "https://www.wikipedia.org/" "Click to open wikipedia"
 [cohesion]: https://en.wikipedia.org/wiki/Cohesion_(computer_science)
 [coupling]: https://en.wikipedia.org/wiki/Coupling_(computer_programming)
 
-
 ## :church: Facade Pattern [wiki](https://en.wikipedia.org/wiki/Facade_pattern)
 
 > Principle of Least Knowledge
 
 Analogous to a facade in architecture, a facade is an object that serves as a front-facing interface masking more complex underlying or structural code.
 
-* High [coupling] is bad when we have to change things.
-* Law of demeter
+- High [coupling] is bad when we have to change things.
+- Law of demeter
 
 ## :microscope: Programming Methodologies
 
-### [GRASP](https://en.wikipedia.org/wiki/GRASP_(object-oriented_design))
+### [GRASP](<https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)>)
 
 General Responsibility Assignment Software Patterns
 
@@ -110,6 +114,6 @@ General Responsibility Assignment Software Patterns
 
 ## :cyclone: Resources
 
-* [Python pattern guide](https://python-patterns.guide/)
+- [Python pattern guide](https://python-patterns.guide/)
 
 <Footer />

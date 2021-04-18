@@ -1,11 +1,11 @@
 ---
 title: New Python Features
 tags:
-- new
-- latest
-- walrus
-- operator
-- features
+  - new
+  - latest
+  - walrus
+  - operator
+  - features
 ---
 
 # :star2: New Python Features
@@ -13,7 +13,7 @@ tags:
 <TagLinks />
 
 The Walrus Operator
-:    `:=` assigns values to variables as part of a larger expression
+: `:=` assigns values to variables as part of a larger expression
 
     ```py
     # Handle a matched regex
@@ -23,22 +23,23 @@ The Walrus Operator
     # A loop that can't be trivially rewritten using 2-arg iter()
     while chunk := file.read(8192):
        process(chunk)
-   ```
+
+    ```
 
 Positional and keyword Parameters
-:    `def f(a, b, /, c, d, *, e, f):`
+: `def f(a, b, /, c, d, *, e, f):`
 
     ```py
     def f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
-      -----------    ----------     ----------
+    -----------    ----------     ----------
         |             |                  |
         |        Positional or keyword   |
         |                                - Keyword only
-         -- Positional only
+        -- Positional only
     ```
 
 Parameter | Argument
-:   ==Parameter== is variable in the declaration of function.
+: ==Parameter== is variable in the declaration of function.
 
     <Badge type="tip" vertical="middle" text="Argument" /> is the actual value of this variable that gets passed to function.
 
@@ -49,4 +50,7 @@ Parameter | Argument
     myClass.MyMethod(myArg1);
     ```
 
+Dictionary Merging operator
+: `dict3 = dict1 | dict2` or inplace using `dict1 |= dict2`
 
+- remove prefix and suffix from strings

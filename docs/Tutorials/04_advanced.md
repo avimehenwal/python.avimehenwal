@@ -1,13 +1,13 @@
 ---
 title: Advanced Python Concepts
 tags:
-- advanced
-- python
-- concepts
-- generator
-- iterator
-- closure
-- decorators
+  - advanced
+  - python
+  - concepts
+  - generator
+  - iterator
+  - closure
+  - decorators
 ---
 
 # :eyes: Advanced Python Concepts
@@ -49,8 +49,8 @@ Some simple generators can be coded succinctly as expressions using a syntax sim
 
 ## :family_man_girl_girl: Iterators
 
-* `for` calls `iter()`, `__iter__()` which called `next()` and subsequently `__next__()`
-* Writing your own iterators?
+- `for` calls `iter()`, `__iter__()` which called `next()` and subsequently `__next__()`
+- Writing your own iterators?
 
 ```python
 class Reverse:
@@ -89,12 +89,24 @@ It's very important to note that the nested functions can access the variables o
 However, at least in python, they are only readonly.
 :::
 
+How is it ddifferent from javascript closure?
+
+```python
+def outer_func():
+    message = 'Hi'
+
+    def inner_func():
+        print(message)
+
+    return inner_func
+```
+
 ## :crown: Decorators
 
 > Preprocessing/Postprocessing the arguments/returns to decorated function
 
-* Can add multiple decorators to a function
-* Decorators in Python are used to modify or inject code in functions or classes. Using decorators, you can wrap a class or function method call so that a piece of code can be executed before or after the execution of the original code. Decorators can be used to check for permissions, modify or track the arguments passed to a method, logging the calls to a specific method, etc.
+- Can add multiple decorators to a function
+- Decorators in Python are used to modify or inject code in functions or classes. Using decorators, you can wrap a class or function method call so that a piece of code can be executed before or after the execution of the original code. Decorators can be used to check for permissions, modify or track the arguments passed to a method, logging the calls to a specific method, etc.
 
 ## :carousel_horse: Coroutines
 
@@ -118,10 +130,10 @@ Only specific to CPython implementation
 
 > [Metaprogramming] treat other programs as data
 
-* [Metaclasses](https://en.wikipedia.org/wiki/Metaclass) are provided by python
-  * a metaclass is a class whose instances are classes.
-  * instance of a normal class is an bounded object in memory
-* https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python
+- [Metaclasses](https://en.wikipedia.org/wiki/Metaclass) are provided by python
+  - a metaclass is a class whose instances are classes.
+  - instance of a normal class is an bounded object in memory
+- https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python
 
 ## :monkey_face: [Monkey Patching]
 
@@ -135,26 +147,26 @@ Default car doesnt have a harness to carry bicycles. We monkey patch it to a car
 
 In general, a descriptor is an object attribute with “binding behavior”, one whose attribute access has been overridden by methods in the descriptor protocol. Those methods are `__get__()`, `__set__()`, and `__delete__()`. If any of those methods are defined for an object, it is said to be a descriptor.
 
-* https://docs.python.org/3/howto/descriptor.html
+- https://docs.python.org/3/howto/descriptor.html
 
 ## :smile: Good Questions
 
-*  Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really work in parallel? What about GIL?
-   * [Why GIL still exists in CPython?](https://wiki.python.org/moin/GlobalInterpreterLock)
-* Dependency
-  * [Functional Dependencies](https://en.wikipedia.org/wiki/Functional_dependency) **FDs**
-    * If $( t1(A) = t2(A)) \implies ( t1(B) = t2(B) )$
-    * duplicated are acceptable as long as the condition is satisfied
-  * Direct Dependency
-  * [Transitive Dependency](https://en.wikipedia.org/wiki/Transitive_dependency)
-    * Third Normal Form **3NF** - Avoid transitive dependency to save space
-  * Partial Dependency **2NF**
-  * **1NF** remove all Multivalued (multiple phone nos) and Composite (Residence Address) date entries
-    * by breaking/decomposing data into atomic values seperate tables
-* What are the wheels and eggs? What is the difference?
-* When to change version? Major | Minor version change
-  * When not backward compatible => Major change
-    * Example python 2 and python 3
+- Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really work in parallel? What about GIL?
+  - [Why GIL still exists in CPython?](https://wiki.python.org/moin/GlobalInterpreterLock)
+- Dependency
+  - [Functional Dependencies](https://en.wikipedia.org/wiki/Functional_dependency) **FDs**
+    - If $( t1(A) = t2(A)) \implies ( t1(B) = t2(B) )$
+    - duplicated are acceptable as long as the condition is satisfied
+  - Direct Dependency
+  - [Transitive Dependency](https://en.wikipedia.org/wiki/Transitive_dependency)
+    - Third Normal Form **3NF** - Avoid transitive dependency to save space
+  - Partial Dependency **2NF**
+  - **1NF** remove all Multivalued (multiple phone nos) and Composite (Residence Address) date entries
+    - by breaking/decomposing data into atomic values seperate tables
+- What are the wheels and eggs? What is the difference?
+- When to change version? Major | Minor version change
+  - When not backward compatible => Major change
+    - Example python 2 and python 3
 
 ## :1234: Types
 
@@ -167,11 +179,10 @@ def infinite_stream(start: int) -> Generator[int, None, None]:
         start += 1
 ```
 
-
 ## :trident: Python Magic Variables
 
 What does `__all__` magic variable do in python?
-:   It's a list of ==public objects== of that module, as interpreted by `import *`.
+: It's a list of ==public objects== of that module, as interpreted by `import *`.
 
     It overrides the default of hiding everything that begins with an underscore.
 
@@ -198,7 +209,7 @@ What does `__all__` magic variable do in python?
     ```
 
 What is the difference between `__getattr__` and `__getattribute__`?
-:   means get object attribute
+: means get object attribute
 
     With objects, you need to deal with its attributes. Ordinarily we do instance.attribute. Sometimes we need more control (when we do not know the name of the attribute in advance).
 
@@ -208,18 +219,12 @@ What is the difference between `__getattr__` and `__getattribute__`?
     [Understanding the difference between __getattr__ and __getattribute__](https://stackoverflow.com/questions/4295678/understanding-the-difference-between-getattr-and-getattribute)
     :::
 
-
 ## :selfie: References
 
-* [Parent pointer tree/ Spaghetti/cactus stack](https://en.wikipedia.org/wiki/Parent_pointer_tree)
-* [Python Grammer Specification](https://docs.python.org/3/reference/grammar.html)
-* [Python Special Variables](https://docs.python.org/3/reference/datamodel.html)
-
-
-
+- [Parent pointer tree/ Spaghetti/cactus stack](https://en.wikipedia.org/wiki/Parent_pointer_tree)
+- [Python Grammer Specification](https://docs.python.org/3/reference/grammar.html)
+- [Python Special Variables](https://docs.python.org/3/reference/datamodel.html)
 
 [closure]: https://en.wikipedia.org/wiki/Closure_(computer_programming)
-[Metaprogramming]: https://en.wikipedia.org/wiki/Metaprogramming
+[metaprogramming]: https://en.wikipedia.org/wiki/Metaprogramming
 [monkey patching]: https://en.wikipedia.org/wiki/Monkey_patch
-
-
