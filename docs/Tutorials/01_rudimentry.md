@@ -24,6 +24,8 @@ Python Enhancement Proposal - [PEP]
 
 [pep]: https://www.python.org/dev/peps/
 
+![python primitive data structures](../.vuepress/public/img/python-primitive-ds.png)
+
 ## :shield: General
 
 - **immutable** basic types (numbers, strings, tuples), are also Primitive types generally
@@ -319,3 +321,6 @@ Difference between `/`, `//` and `%`?
 [serialization]: https://en.wikipedia.org/wiki/Serialization
 [composite]: https://en.wikipedia.org/wiki/Composite_data_type
 [ast]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
+
+- [Mutable vs Immutable Objects in Python](https://medium.com/@meghamohan/mutable-and-immutable-side-of-python-c2145cf72747)
+- [Mutable vs Immutable in python](https://medium.com/@bennettdixon16/mutable-and-immutable-types-in-python-535537098716)

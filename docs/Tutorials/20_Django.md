@@ -88,4 +88,10 @@ Ruby of rails
 
 ## How to work with django?
 
+## Quesstions
+
+- Django backend and react frontend
+- Backend for Mobile endpoints
+- [hosting?](https://www.pythonanywhere.com/)
+
 <Footer />
