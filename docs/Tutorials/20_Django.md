@@ -34,7 +34,18 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-::: warning django migrations
+```mermaid
+graph LR
+A(django Models):::blue
+B(DB Schema):::yellow
+
+A -- migration --> B
+
+classDef yellow fill:#FFE873,stroke-width:0px;
+classDef blue fill:#b8d4ff,stroke-width:0px;
+```
+
+::: tip django migrations
 You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
 Run 'python manage.py migrate' to apply them.
 
@@ -47,9 +58,10 @@ Django tracks which ones are applied using a special table in your database call
 
 ## New App
 
+Django apps are more like components
+
 ```
-python manage.py startapp polls
-python manage.py shell
+python manage.py startapp <app_name>
 python manage.py createsuperuser
 ```
 
@@ -58,11 +70,27 @@ python manage.py createsuperuser
 ### How to write views?
 
 - How to add App namespace?
+- Pass Template Context Variables to views
+- view templates can inherit other templates
+- Template Tags `block` and `extends`, if, for loop, filters stacking is possible
+- Cross reference and linking?
+- Namespace your local app URLs
+- class based views
+- How to Paginate data from models to views? `from django.core.paginator import paginator`
+  - page number from query string `paginator.page(request.GET.get('page', 1))`
 
 ### How to add new models?
 
+::: tip changing Models
+Anytime you change models, dont forget to run makemigrations and migrate
+:::
+
+Add values to database directly from shell
+
 ```
 python manage.py makemigrations polls
+python manage.py migrate
+python manage.py shell
 python manage.py sqlmigrate polls 0001
 
 ```
@@ -73,6 +101,22 @@ python manage.py sqlmigrate polls 0001
 [what is refential CASCADE in django models?](https://stackoverflow.com/questions/38388423/what-does-on-delete-do-on-django-models)
 
 : When the referenced object is deleted, also delete the objects that have references to it (when you remove a blog post for instance, you might want to delete comments as well). SQL equivalent: CASCADE.
+
+- Pull data from Models in Template Context?
+- QuerySet `object.all()`
+
+## Deal with Forms? Capturing data
+
+```
+from django import forms
+```
+
+- diff b/w ModelForms and Form? Validations provide by django
+- `action` and `method`, create your own google search form
+- Add security while using POST `{% csrf_token %}`
+  - user can clear up `required` from HTML form at client side and try to submit
+  - `my_form.is_valid`, `my_form.clean_data`
+- Initial data on form, default data
 
 ## How is it different?
 
@@ -87,6 +131,19 @@ Ruby of rails
 #### postgresSQL vs mySQL
 
 ## How to work with django?
+
+- [Write django queries](https://docs.djangoproject.com/en/3.2/topics/db/queries/)
+- [ ] Create new App
+- [ ] Add apps to your django project
+- [ ] Create new models
+- [ ] Run migrations
+- [ ] Add model to admin
+- [ ] Create new views and send Template Context Variables to them
+- [ ] Forms and add Security
+
+## Django Projects
+
+- https://github.com/techwithtim/Music-Controller-Web-App-Tutorial
 
 ## Quesstions
 

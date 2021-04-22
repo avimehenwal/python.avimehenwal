@@ -101,6 +101,19 @@ def outer_func():
     return inner_func
 ```
 
+::: warning Why use closures?
+Closures don't give you any extra power.
+
+Anything you can achieve with them you can achieve without them.
+
+But they are very usable for making code more clear and readable. And as we all know clean readable short code is a code that is easier to debug and contains fewer bugs.
+
+Something they could be more optimized and more redable
+
+:::right
+[link](https://stackoverflow.com/questions/1305570/closures-why-are-they-so-useful)
+:::
+
 ## :crown: Decorators
 
 > Preprocessing/Postprocessing the arguments/returns to decorated function

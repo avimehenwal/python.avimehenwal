@@ -280,6 +280,38 @@ Namespace created by interpreter
 Scope
 : is a textual region of a Python program where a namespace is directly accessible. “Directly accessible”
 
+## String formatting
+
+1. Old C-sstyled string formatting
+2. with `.format()`
+3. Modern `f` style strings
+
+<code-group>
+<code-block title="C-STYLED">
+```python
+name = "Eric"
+age = 74
+"Hello, %s. You are %s." % (name, age)
+```
+</code-block>
+
+<code-block title="FORMAT">
+```FORMAT
+"Hello, {1}. You are {0}.".format(age, name)
+```
+</code-block>
+
+<code-block title="F-STRINGS">
+```FORMAT
+name = "Eric"
+age = 74
+f"Hello, {name}. You are {age}."
+'Hello, Eric. You are 74.'
+```
+</code-block>
+
+</code-group>
+
 ## :closed_book: Standard Library Interfaces
 
 | Function                             | Library name                       |
