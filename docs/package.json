@@ -32,7 +32,7 @@
     "markdown-it-mark": "^3.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
-    "mermaid": "^8.5.1",
+    "mermaid": "^8.11.0",
     "semantic-release": "^17.2.3",
     "toml": "^3.0.0",
     "vuepress": "^1.5.0",
