@@ -9,6 +9,8 @@ tags:
 
 <TagLinks />
 
+![Django request response lifecycle](../.vuepress/public/img/django-request-lifecycle.jpg)
+
 ## Features?
 
 > build a website with database attached to it
@@ -23,7 +25,7 @@ tags:
   - Django Channels, Queue implementation
   - CGI, run C code from HTTP requests
   - before request/response now we are talking about **connection and events**
-- Can ctearte and mount multiple apps under various urls paths, use `include()`
+- Can create and mount multiple apps under various urls paths, use `include()`
 
 ```
 # startup commands

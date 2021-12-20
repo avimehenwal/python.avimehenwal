@@ -346,6 +346,14 @@ Difference between `/`, `//` and `%`?
 
     `//` Floor division return an **int**
 
+## Python reporting, formatted strings
+
+```python
+print("{:->20}".format('hello'))
+print("{:-<20}".format('hello'))
+print("{:->20}".format('hello'))
+```
+
 ## :paperclip: References
 
 - https://pyformat.info/
